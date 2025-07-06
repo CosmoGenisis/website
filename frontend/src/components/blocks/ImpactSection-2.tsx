@@ -19,12 +19,12 @@ const cards = [
 
 const cardVariants = {
   hidden: { opacity: 0, y: 40, scale: 0.95 },
-  visible: (i: number) => ({
+  visible: {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: { delay: 0.15 + i * 0.15, type: "spring", stiffness: 80 },
-  }),
+    transition: { delay: 0.15, type: "spring" as const, stiffness: 80 },
+  },
 };
 
 export function ImpactSection() {
@@ -46,7 +46,7 @@ export function ImpactSection() {
                 className="flex items-center justify-between w-full mb-6"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 + idx * 0.1, duration: 0.5, type: "spring" }}
+                transition={{ delay: 0.2 + idx * 0.1, duration: 0.5, type: "spring" as const }}
                 viewport={{ once: true }}
               >
                 <h3 className="text-2xl font-bold text-gray-900">{card.title}</h3>
@@ -63,7 +63,7 @@ export function ImpactSection() {
                 className="text-gray-600 text-lg mb-8"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 + idx * 0.1, duration: 0.5, type: "spring" }}
+                transition={{ delay: 0.3 + idx * 0.1, duration: 0.5, type: "spring" as const }}
                 viewport={{ once: true }}
               >
                 {card.description}
@@ -72,7 +72,7 @@ export function ImpactSection() {
                 className="w-full flex justify-center mt-auto"
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.4 + idx * 0.1, duration: 0.6, type: "spring" }}
+                transition={{ delay: 0.4 + idx * 0.1, duration: 0.6, type: "spring" as const }}
                 viewport={{ once: true }}
               >
                 <img

@@ -56,12 +56,12 @@ const cards = [
 
 const cardVariants = {
   hidden: { opacity: 0, y: 40, scale: 0.95 },
-  visible: (i: number) => ({
+  visible: {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: { delay: 0.15 + i * 0.12, type: "spring", stiffness: 80 },
-  }),
+    transition: { delay: 0.15, type: "spring" as const, stiffness: 80 },
+  },
 };
 
 const textVariants = {

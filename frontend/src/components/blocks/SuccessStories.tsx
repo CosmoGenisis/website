@@ -147,7 +147,7 @@ export function SuccessStories() {
               className="flex"
               initial={false}
               animate={{ x: `-${activeTestimonial * 100}%` }}
-              transition={{ type: "spring", stiffness: 300, damping: 30 }}
+              transition={{ type: "spring" as const, stiffness: 300, damping: 30 }}
             >
               {testimonials.map((testimonial) => (
                 <div key={testimonial.id} className="w-full flex-shrink-0 px-4 md:px-12">

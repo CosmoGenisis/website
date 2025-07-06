@@ -106,7 +106,7 @@ export function AiBenefitsCards() {
               whileInView="visible"
               viewport={{ once: true }}
               variants={cardVariants}
-              transition={{ delay: index * 0.12, type: "spring" }}
+              transition={{ delay: index * 0.12, type: "spring" as const }}
             >
               <Card className={`h-full border-2 ${card.color} hover:shadow-lg transition-shadow duration-300`}>
                 <CardHeader>

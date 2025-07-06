@@ -8,11 +8,11 @@ import { Bell, Clock, AlertTriangle, AlertCircle } from 'lucide-react';
 
 const cardVariants = {
   hidden: { opacity: 0, y: 20 },
-  visible: (i: number) => ({
+  visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5, delay: i * 0.1 }
-  })
+    transition: { duration: 0.5, delay: 0.1 }
+  }
 };
 
 export function ProductivityAlerts() {

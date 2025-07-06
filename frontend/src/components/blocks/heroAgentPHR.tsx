@@ -37,7 +37,22 @@ const transitionItemVariants: Variants = {
   },
 };
 
-export default function HeroAgent() {
+interface HeroAgentProps {
+  heading?: string;
+  description?: string;
+  image?: string;
+  item?: {
+    label: string;
+    agents: { label: string; to: string; icon: React.ReactNode }[];
+  };
+}
+
+export default function HeroAgent({ 
+  heading = "Meet Your AI Agent Prime HR",
+  description = "Prime HR is your AI powered talent assesssor. It benchmarks candidates across technical depth, cultural alignment, and potential-giving hiring teams a leaderboard a best fit individuals through verified data and deep skill analysis",
+  image = img1,
+  item
+}: HeroAgentProps) {
     return (
         <>
             <HeroHeader />
@@ -67,13 +82,11 @@ export default function HeroAgent() {
                                 >
                                     <h1
                                         className="max-w-4xl text-balance text-5xl font-medium md:text-6xl mt-32 ">
-                                        Meet Your AI  <span className='text-primary'>Agent Prime HR</span>
+                                        {heading}
                                     </h1>
                                     <p
                                         className="mt-4 max-w-4xl text-pretty text-lg md:text-xl">
-                                        Prime HR is your AI powered talent assesssor. It benchmarks candidates across technical 
-                                        depth, cultural alignment, and potential-giving hiring teams a leaderboard a best fit 
-                                        individuals through verified data and deep skill analysis
+                                        {description}
                                     </p>
                                     <div className="flex items-center gap-2 justify-center mt-8">
                                         <div
@@ -107,7 +120,7 @@ export default function HeroAgent() {
                             }}>
                             <div className="w-full flex justify-center mt-36 overflow-hidden" style={{ height: '500px' }}>
                                 <img
-                                    src={img1}
+                                    src={image}
                                     alt="Hero"
                                     className="w-full max-w-5xl h-full object-cover"
                                     draggable={false}

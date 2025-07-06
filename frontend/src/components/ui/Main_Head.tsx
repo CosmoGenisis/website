@@ -40,7 +40,7 @@ function Head() {
                     key={index}
                     className="absolute text-blue-500 font-bold"
                     initial={{ opacity: 0, y: "-100" }}
-                    transition={{ type: "spring", stiffness: 50 }}
+                    transition={{ type: "spring" as const, stiffness: 50 }}
                     animate={
                       titleNumber === index
                         ? {

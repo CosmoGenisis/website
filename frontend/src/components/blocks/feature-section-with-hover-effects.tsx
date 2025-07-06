@@ -22,12 +22,12 @@ const features = [
 
 const cardVariants = {
   hidden: { opacity: 0, y: 40, scale: 0.95 },
-  visible: (i: number) => ({
+  visible: {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: { delay: 0.5 + i * 0.2, type: "spring", stiffness: 80 },
-  }),
+    transition: { delay: 0.5, type: "spring" as const, stiffness: 80 },
+  }
 };
 
 export function FeaturesSectionWithHoverEffects() {
@@ -92,7 +92,7 @@ export function FeaturesSectionWithHoverEffects() {
         <motion.div
           initial={{ scale: 0.7, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
-          transition={{ delay: 1, duration: 0.5, type: "spring" }}
+          transition={{ delay: 1, duration: 0.5, type: "spring" as const }}
           className="absolute left-1/2.5 top-1/2.5 -translate-x-1/2 -translate-y-1/2 z-20 bg-white shadow-xl rounded-full w-28 h-28 flex items-center justify-center"
         >
           <motion.div

@@ -103,7 +103,7 @@ export function ResultsSection() {
               initial={{ opacity: 0, x: 40 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.2 }}
-              transition={{ delay: i * 0.08, duration: 0.5, type: "spring" }}
+              transition={{ delay: i * 0.08, duration: 0.5, type: "spring" as const }}
               className="flex items-start gap-5"
             >
               <div>{f.icon}</div>

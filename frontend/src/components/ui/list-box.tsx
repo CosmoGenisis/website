@@ -4,10 +4,12 @@ import {
   Header as AriaHeader,
   ListBox as AriaListBox,
   ListBoxItem as AriaListBoxItem,
-  ListBoxItemProps as AriaListBoxItemProps,
-  ListBoxProps as AriaListBoxProps,
   Section as AriaSection,
   composeRenderProps,
+} from "react-aria-components"
+import type {
+  ListBoxItemProps as AriaListBoxItemProps,
+  ListBoxProps as AriaListBoxProps,
 } from "react-aria-components"
 
 import { cn } from "@/lib/utils"

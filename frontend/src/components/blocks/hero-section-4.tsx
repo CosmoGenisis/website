@@ -76,7 +76,7 @@ export function HeroSection() {
             className="w-full h-full flex items-center justify-center"
             initial={{ scale: 0.95, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.3, type: "spring" }}
+            transition={{ duration: 0.8, delay: 0.3, type: "spring" as const }}
             viewport={{ once: true }}
           >
             <img
@@ -178,7 +178,7 @@ export function HeroSection() {
                 className="w-full h-56 mb-8 rounded-xl overflow-hidden bg-gray-100 flex items-center justify-center"
                 initial={{ scale: 0.92, opacity: 0 }}
                 whileInView={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.7, delay: 0.2 + i * 0.1, type: "spring" }}
+                transition={{ duration: 0.7, delay: 0.2 + i * 0.1, type: "spring" as const }}
                 viewport={{ once: true }}
               >
                 <img

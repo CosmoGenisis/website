@@ -160,7 +160,8 @@ const OurTeam = () => {
   type TeamMemberProps = {
     name: string;
     role: string;
-    icon: React.ReactNode;
+    icon?: React.ReactNode;
+    image?: string;
     bio: React.ReactNode;
   };
   

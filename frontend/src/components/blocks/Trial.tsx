@@ -2,7 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Check } from "lucide-react";
 import React from "react";
 
-export default function Trial(): JSX.Element {
+export default function Trial(): React.JSX.Element {
   // Data for the progress steps
   const progressSteps = [
     {
