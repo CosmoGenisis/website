@@ -30,6 +30,7 @@ import img5 from '@/assets/About page/Kshitz.png'
 import img6 from '@/assets/About page/Pavan.png'
 import img7 from '@/images/Mission.png'
 import img8 from '@/images/Vision.png'
+import teamCollab from '@/assets/About page/original-a85f6a23a15bde7cea3a88a186fb371d.webp';
 
 
 // Ocean Wave Component (Static version)
@@ -63,10 +64,8 @@ const About = () => {
       <OurValues />
       <OurTeam />
       <WhatSetsUsApart />
-      <div className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4  sm:px-6 lg:px-8">
-          <CallToAction />
-        </div>
+      <div className="py-20 bg-white flex justify-center">
+        <CallToAction />
       </div>
       <FooterDemo />
     </div>
@@ -505,7 +504,7 @@ const JoinUs = () => (
             className="relative rounded-xl overflow-hidden shadow-2xl"
           >
             <img 
-              src="/src/assets/About page/team-collaboration.webp" 
+              src={teamCollab} 
               alt="Join Zordie AI Team" 
               className="w-full object-cover"
             />

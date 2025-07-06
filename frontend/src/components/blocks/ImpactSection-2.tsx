@@ -86,8 +86,8 @@ export function ImpactSection() {
           ))}
         </div>
         <div className="flex justify-center items-center mt-12">
-        <CallToAction />
-      </div>
+          <CallToAction />
+        </div>
       </div>
     </section>
   );
