@@ -3,6 +3,8 @@
 import { useState } from "react"
 
 import { TrendingUp, Users, Lightbulb } from "lucide-react"
+import img1 from "@/images/Prompt.png"
+import img2 from "@/images/agentic.png"
 
 export default function Flow() {
   const [activeTab, setActiveTab] = useState("automate-tasks")
@@ -14,7 +16,7 @@ export default function Flow() {
       icon: Users,
       title: "Choose Agents",
       description: "Pick from a library of ready-to-use AI agents tailored for specific business workflows.",
-      image: "/src/images/4417da43e61fb4ef3fd13917fd21a505.gif"
+      image: "https://framerusercontent.com/images/ZhpjPXHptjxKwbU0xwM9csZ98g.gif"
     },
     {
       id: "write-prompt",
@@ -23,7 +25,7 @@ export default function Flow() {
       title: "Write a Prompt",
       description:
         "Easily guide Zordie AI agents by entering a simple prompt—customize tasks like candidate screening, interview questions, or job descriptions in seconds.",
-      image: "/src/images/3607fd13fddeb924c0bd732b7b3f3ca6.gif"
+      image: img1
     },
     {
       id: "automate-tasks",
@@ -32,7 +34,7 @@ export default function Flow() {
       title: "Automate Tasks",
       description:
         "Let Zordie AI automate repetitive hiring tasks—like resume screening, interview scheduling, follow-ups, and updates—so your team can focus on smarter decisions.",
-      image: "/src/assets/agentic.png"
+      image: img2
     },
   ]
 
@@ -91,7 +93,7 @@ export default function Flow() {
               <div className="relative w-full h-full min-h-[300px]">
                 <div className="w-full h-full rounded-2xl bg-gray-900 overflow-hidden">
                   <img
-                    src={activeTabData.image || "/placeholder.svg"}
+                    src={activeTabData.image}
                     alt={activeTabData.title}
                     className="w-full h-full object-contain"
                   />

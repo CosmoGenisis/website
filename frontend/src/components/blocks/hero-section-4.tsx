@@ -1,9 +1,13 @@
 import React from "react";
-import img1 from "@/images/Workflow1.png"
 import aiImage from "@/images/ai-hero.png"
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import img2 from '@/images/about.png'
+import img1 from "@/images/agent1.png";
+import img2 from "@/images/agent2.png";
+import img3 from "@/images/agent3.png";
+import img4 from "@/images/agent4.png";
+import img5 from "@/images/agent5.png";
+import imgCenter from "@/images/agent-center.png"; 
 
 export function HeroSection() {
   const navigate = useNavigate();
@@ -80,7 +84,7 @@ export function HeroSection() {
             viewport={{ once: true }}
           >
             <img
-              src="/src/images/agent5.png"
+              src={img5}
               alt="Zordie AI Platform"
               className="object-cover w-full h-full py-20"
             />
@@ -154,17 +158,17 @@ export function HeroSection() {
         >
           {[
             {
-              img: "/src/images/agent1.png",
+              img: img1,
               title: <>Intelligent automation<br />for every business</>,
               desc: "Zodio AI's platform streamlines complex workflows and automates repetitive tasks, allowing your team to focus on what truly matters - innovation and growth."
             },
             {
-              img: "/src/images/agent4.png",
+              img: img4,
               title: <>Seamless integration<br />with your ecosystem</>,
               desc: "Our flexible architecture adapts to your existing systems, with powerful APIs and pre-built connectors that make implementation smooth and efficient."
             },
             {
-              img: "/src/images/agent6.png",
+              img: img2,
               title: <>Cutting-edge AI<br />made accessible</>,
               desc: "We've simplified complex AI technology into intuitive interfaces that anyone can use, democratizing access to the power of artificial intelligence."
             }

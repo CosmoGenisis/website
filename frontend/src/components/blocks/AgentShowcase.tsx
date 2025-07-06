@@ -5,7 +5,7 @@ import img2 from "@/images/agent2.png";
 import img3 from "@/images/agent3.png";
 import img4 from "@/images/agent4.png";
 import img5 from "@/images/agent5.png";
-import imgCenter from "@/images/agent-center.png";
+import imgCenter from "@/images/agent-center.png"; 
 
 type Agent = {
   id: string;
