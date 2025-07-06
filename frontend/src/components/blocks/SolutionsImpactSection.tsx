@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import type { FieldErrorProps } from "react-aria-components";
 
 const cards = [
   {

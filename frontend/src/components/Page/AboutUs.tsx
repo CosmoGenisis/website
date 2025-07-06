@@ -24,10 +24,10 @@ import {SuccessStories} from "@/components/blocks/SuccessStories"
 import FooterDemo from '../ui/FooterDemo';
 import img1 from '@/images/about.png'
 import img2 from '@/images/ai-hero.png'
-import img3 from '@/assets/About Page/Abdul.png'
-import img4 from '@/assets/About Page/laxmi.png'
-import img5 from '@/assets/About Page/Kshitz.png'
-import img6 from '@/assets/About Page/Pavan.png'
+import img3 from '@/assets/About page/Abdul.png'
+import img4 from '@/assets/About page/laxmi.png'
+import img5 from '@/assets/About page/Kshitz.png'
+import img6 from '@/assets/About page/Pavan.png'
 import img7 from '@/images/Mission.png'
 import img8 from '@/images/Vision.png'
 
