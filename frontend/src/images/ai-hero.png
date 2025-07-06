@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f8fafc" />
+  
+  <!-- Abstract AI Network -->
+  <g opacity="0.8">
+    <!-- Nodes -->
+    <circle cx="400" cy="300" r="60" fill="#3b82f6" opacity="0.9" />
+    <circle cx="250" cy="200" r="40" fill="#06b6d4" opacity="0.8" />
+    <circle cx="550" cy="200" r="40" fill="#10b981" opacity="0.8" />
+    <circle cx="250" cy="400" r="40" fill="#8b5cf6" opacity="0.8" />
+    <circle cx="550" cy="400" r="40" fill="#ec4899" opacity="0.8" />
+    
+    <!-- Small nodes -->
+    <circle cx="180" cy="150" r="15" fill="#3b82f6" opacity="0.6" />
+    <circle cx="620" cy="150" r="15" fill="#10b981" opacity="0.6" />
+    <circle cx="180" cy="450" r="15" fill="#8b5cf6" opacity="0.6" />
+    <circle cx="620" cy="450" r="15" fill="#ec4899" opacity="0.6" />
+    <circle cx="320" cy="100" r="15" fill="#06b6d4" opacity="0.6" />
+    <circle cx="480" cy="100" r="15" fill="#10b981" opacity="0.6" />
+    <circle cx="320" cy="500" r="15" fill="#8b5cf6" opacity="0.6" />
+    <circle cx="480" cy="500" r="15" fill="#ec4899" opacity="0.6" />
+    
+    <!-- Connections -->
+    <line x1="400" y1="300" x2="250" y2="200" stroke="#3b82f6" stroke-width="3" opacity="0.5" />
+    <line x1="400" y1="300" x2="550" y2="200" stroke="#10b981" stroke-width="3" opacity="0.5" />
+    <line x1="400" y1="300" x2="250" y2="400" stroke="#8b5cf6" stroke-width="3" opacity="0.5" />
+    <line x1="400" y1="300" x2="550" y2="400" stroke="#ec4899" stroke-width="3" opacity="0.5" />
+    
+    <line x1="250" y1="200" x2="180" y2="150" stroke="#3b82f6" stroke-width="2" opacity="0.4" />
+    <line x1="550" y1="200" x2="620" y2="150" stroke="#10b981" stroke-width="2" opacity="0.4" />
+    <line x1="250" y1="400" x2="180" y2="450" stroke="#8b5cf6" stroke-width="2" opacity="0.4" />
+    <line x1="550" y1="400" x2="620" y2="450" stroke="#ec4899" stroke-width="2" opacity="0.4" />
+    
+    <line x1="250" y1="200" x2="320" y2="100" stroke="#06b6d4" stroke-width="2" opacity="0.4" />
+    <line x1="550" y1="200" x2="480" y2="100" stroke="#10b981" stroke-width="2" opacity="0.4" />
+    <line x1="250" y1="400" x2="320" y2="500" stroke="#8b5cf6" stroke-width="2" opacity="0.4" />
+    <line x1="550" y1="400" x2="480" y2="500" stroke="#ec4899" stroke-width="2" opacity="0.4" />
+    
+    <!-- Cross connections -->
+    <line x1="250" y1="200" x2="550" y2="200" stroke="#64748b" stroke-width="2" opacity="0.3" />
+    <line x1="250" y1="400" x2="550" y2="400" stroke="#64748b" stroke-width="2" opacity="0.3" />
+    <line x1="250" y1="200" x2="250" y2="400" stroke="#64748b" stroke-width="2" opacity="0.3" />
+    <line x1="550" y1="200" x2="550" y2="400" stroke="#64748b" stroke-width="2" opacity="0.3" />
+    
+    <!-- Diagonal connections -->
+    <line x1="250" y1="200" x2="550" y2="400" stroke="#64748b" stroke-width="1" opacity="0.2" />
+    <line x1="550" y1="200" x2="250" y2="400" stroke="#64748b" stroke-width="1" opacity="0.2" />
+  </g>
+  
+  <!-- Central node pulse animation -->
+  <circle cx="400" cy="300" r="70" fill="none" stroke="#3b82f6" stroke-width="2" opacity="0.5">
+    <animate attributeName="r" values="65;85;65" dur="4s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.5;0.2;0.5" dur="4s" repeatCount="indefinite" />
+  </circle>
+  
+  <!-- Zordie AI Text -->
+  <text x="400" y="300" font-family="Arial, sans-serif" font-size="40" font-weight="bold" text-anchor="middle" fill="#1e293b">Zordie AI</text>
+  <text x="400" y="340" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="#64748b">Intelligent Solutions for Tomorrow</text>
+</svg>

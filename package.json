@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "motion": "^12.12.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  }
+}
