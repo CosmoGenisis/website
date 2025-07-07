@@ -168,7 +168,7 @@ const PreAccessLanding = () => {
               transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
               className="bg-gradient-to-r from-blue-200 via-blue-400 to-blue-200 bg-clip-text text-transparent bg-[length:200%_auto] relative"
             >
-              HR Management
+              Hiring
               <motion.span 
                 className="absolute -inset-1 rounded-lg opacity-30 blur-xl bg-gradient-to-r from-blue-200 to-blue-400"
                 animate={{ opacity: [0.1, 0.1, 0.1] }}
@@ -183,7 +183,7 @@ const PreAccessLanding = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="mb-10 max-w-2xl text-lg text-gray-700 px-0 py-0 bg-transparent border-0 shadow-none rounded-none backdrop-blur-none"
           >
-            Join our exclusive early access program and be among the first to transform your HR operations with our AI-powered platform.
+            Join our exclusive early access program and be among the first to transform your Hiring & HR operations with our AI-powered platform.
           </motion.p>
 
           {/* Countdown timer */}

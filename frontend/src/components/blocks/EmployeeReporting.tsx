@@ -20,21 +20,10 @@ const cardVariants = {
 
 export function EmployeeReporting() {
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-gray-50">
+    <section className="py-0 bg-gradient-to-b from-white to-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center justify-center px-4 py-2 bg-purple-100 text-purple-800 rounded-full text-sm font-medium mb-6">
-            Advanced Analytics
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="text-purple-600">Employee</span> Performance Tracking
-          </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Comprehensive analytics and reporting tools to monitor employee performance and productivity
-          </p>
-        </div>
 
-        {/* First Card - Daily Report */}
+        {/* First Card - Daily Report 
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -85,7 +74,7 @@ export function EmployeeReporting() {
               </div>
             </div>
           </Card>
-        </motion.div>
+        </motion.div>*/}
 
         {/* Second Card - Time Distribution */}
         <motion.div

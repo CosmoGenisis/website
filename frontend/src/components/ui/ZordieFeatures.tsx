@@ -231,7 +231,7 @@ function AnimatedTextCarousel({ messages }: { messages: string[] }) {
             <h2 className="text-4xl font-bold text-gray-900 mb-8 leading-tight">
               Powerful Features to
               <br />
-              Simplify HR Management
+              Simplify Hiring Workflow
             </h2>
 
             <p className="text-lg text-gray-600 mb-12">

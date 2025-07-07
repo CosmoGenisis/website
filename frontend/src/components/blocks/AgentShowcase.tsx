@@ -27,7 +27,7 @@ const agents: Agent[] = [
     capabilities: [
       'Approve HR, hiring, and payroll actions instantly',
       'Set and enforce role-based access (RBAC) across departments',
-      'Route requests between agents (Optimus, Laxmi, etc.)',
+      'Route requests between agents (Optimus, Onix, etc.)',
       'Pause workflows, override steps, or trigger reviews',
       'Track all activity with audit logs',
       'Set intelligent rules and thresholds'
@@ -82,25 +82,10 @@ const agents: Agent[] = [
     ],
     image: img4,
   },
-  {
-    id: 'laxmi',
-    name: 'LAXMI',
-    title: 'AI Payroll & Finance Manager',
-    description: '"Payroll takes one click now — everything is auto-calculated and compliant."',
-    color: 'bg-green-500',
-    capabilities: [
-      'Run monthly payroll with auto-deductions',
-      'Generate payslips, tax, PF, ESI, and bonus reports',
-      'Track finance costs by department',
-      'Manage advances, reimbursements, and bonuses',
-      'Stay compliant with labor and tax regulations',
-      'Export audit-ready finance logs anytime'
-    ],
-    image: img3,
-  },
+  
   {
     id: 'maxi',
-    name: 'MAXI',
+    name: 'VIKA',
     title: 'AI Performance, Learning & Engagement Coach',
     description: '"Maxi helps me understand team performance, growth, and wellbeing at a glance."',
     color: 'bg-indigo-500',
