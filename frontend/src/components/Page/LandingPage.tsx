@@ -10,7 +10,7 @@ import HRAutomationSection from '../blocks/Analytics'
 import Productivity from '../blocks/Productivity'
 import { AnimatedTestimonialsWithParticles } from '../blocks/Testo'
 import {FaqDemo} from '@/demo/faqdemo'
-import ZordieFeatures from '../ui/ZordieFeatures'
+{/*import ZordieFeatures from '../ui/ZordieFeatures'*/}
 import ZordieFeatures1 from '../ui/ZordieFeature1'
 import { ContainerScroll } from '../ui/CS'
 import ScrollAnimationDemo from '../ui/CSD'
@@ -20,20 +20,24 @@ import HRAgentsDashboard from '../blocks/Hragents'
 import AIBenefitsLanding from '../blocks/AiBenefits'
 import Trial from '../blocks/Trial'
 import FeatureBentoGrid from '../blocks/FeatureBentoGrid'
+import Zordifeatures from '../ui/ZordieFeatures3'
+import ZordiFeatures from '../ui/ZordieFeatures4'
+import RecruiterAiTools from '../blocks/RecruiterAiTools'
+import UserTestimonials from '../blocks/UserTestimonials'
+import FaqPage from '../blocks/FaqPage'
+import HeroSmarterHiring from '../blocks/HeroSmarterHiring'
 
 
 export const LandingPage=()=>{
     return(
         <div className="relative bg-white">
             <HeroSection></HeroSection>
-            <ZordieFeatures/>
-            <Flow></Flow>
-            <AIBenefitsLanding/>
-            <AnimatedTestimonialsWithParticles></AnimatedTestimonialsWithParticles>
-            {/* Wrap FaqDemo in a div with white background to ensure no color bleed */}
-            <div className="bg-white">
-                <FaqDemo></FaqDemo>
-            </div>
+            <Zordifeatures />
+            <ZordiFeatures />
+            <RecruiterAiTools />
+            <UserTestimonials />
+            <FaqPage />
+            <HeroSmarterHiring />
             <FooterDemo />
         </div>
     )
