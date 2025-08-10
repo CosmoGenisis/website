@@ -16,6 +16,9 @@ import { ArrowRight } from 'lucide-react'
 import {AnimatedHeroBackground} from './AnimatedHeroBackground'
 import img from '@/images/image6.png'
 import img1 from '@/images/Home.png'
+import img2 from '@/images/People_8.png'
+import img3 from '@/images/People_2.png'
+import img4 from '@/images/People_3.png'
 
 // Import framer-motion for scroll animation
 import { motion, useScroll, useTransform } from "framer-motion"
@@ -131,9 +134,9 @@ export function HeroSection() {
                                     {/* Trusted by avatars and text */}
                                     <div className="flex items-center justify-center mt-10">
                                         <div className="flex -space-x-4">
-                                            <img src="https://framerusercontent.com/images/8wRQDTwiBme4MkhgYNtrPBgjEg.png?scale-down-to=1024" alt="avatar" className="w-12 h-12 rounded-full border-2 border-white" />
-                                            <img src="https://framerusercontent.com/images/QJMEu1GvwxokTlkbQ1oeAad8AR0.png?scale-down-to=1024" alt="avatar" className="w-12 h-12 rounded-full border-2 border-white" />
-                                            <img src="https://framerusercontent.com/images/K0Q8Zo65cAEGLpM46ruLjgnUNs.png?scale-down-to=512" alt="avatar" className="w-12 h-12 rounded-full border-2 border-white" />
+                                            <img src={img2} alt="avatar" className="w-12 h-12 rounded-full border-2 border-white" />
+                                            <img src={img3} alt="avatar" className="w-12 h-12 rounded-full border-2 border-white" />
+                                            <img src={img4} alt="avatar" className="w-12 h-12 rounded-full border-2 border-white" />
                                         </div>
                                         <span className="ml-4 text-lg text-gray-600 font-medium">Trusted already by 10k+</span>
                                     </div>
