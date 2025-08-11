@@ -24,7 +24,7 @@ import Trial from '../blocks/Trial'
 import FeatureBentoGrid from '../blocks/FeatureBentoGrid'
 import RecruiterAiTools from '../blocks/RecruiterAiTools'
 import UserTestimonials from '../blocks/UserTestimonials'
-import FaqPage from '../blocks/FaqPage'
+import FaqPage from '../blocks/FaqPage2'
 import HeroSmarterHiring from '../blocks/HeroSmarterHiring'
 
 
@@ -38,6 +38,8 @@ export const CompaniesPage=()=>{
             <CompanyFeaturesCards />
             <AgentsIntegrationDiagram />
             <ZordieFeatures />
+            <AnimatedTestimonialsWithParticles />
+            <FaqPage />
             <FooterDemo />
         </div>
     )

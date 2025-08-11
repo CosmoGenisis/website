@@ -32,7 +32,9 @@ export const LandingPage=()=>{
     return(
         <div className="relative bg-white">
             <HeroSection></HeroSection>
+            <div className=" mb-24">
             <Zordifeatures />
+            </div>
             <ZordiFeatures />
             <RecruiterAiTools />
             <UserTestimonials />

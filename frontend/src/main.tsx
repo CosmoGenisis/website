@@ -4,6 +4,19 @@ import './index.css'
 import App from './App.tsx'
 import { ClerkProvider } from '@clerk/clerk-react';
 import { CLERK_PUBLISHABLE_KEY } from './config';
+import Lenis from '@studio-freight/lenis'
+
+const lenis = new Lenis({
+  lerp: 0.1,
+  smooth: true,
+})
+
+function raf(time: number) {
+  lenis.raf(time)
+  requestAnimationFrame(raf)
+}
+
+requestAnimationFrame(raf)
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

@@ -173,16 +173,16 @@ export function AnimatedTestimonialsWithParticles() {
     // Add more testimonials as needed
   ];
 
-  const visibleRows = 3;
-  const cardsPerRow = 3;
-  const rowHeight = 200; // px, adjust as needed
+
+  const cardsPerRow = 3; // px, adjust as needed
+  const cardHeight = 220;
 
   // Prepare rows of 3 testimonials each, looping as needed
-  const rows = [];
+  const rows: TestimonialData[][] = [];
   for (let i = 0; i < testimonials.length; i += cardsPerRow) {
     rows.push(testimonials.slice(i, i + cardsPerRow));
   }
-  // Ensure at least one full row for looping
+  // Ensure last row is filled for seamless loop
   if (rows.length > 0 && rows[rows.length - 1].length < cardsPerRow) {
     rows[rows.length - 1] = [
       ...rows[rows.length - 1],
@@ -193,15 +193,17 @@ export function AnimatedTestimonialsWithParticles() {
   // Duplicate rows for seamless looping
   const allRows = [...rows, ...rows];
 
+  const totalRows = allRows.length;
+  const totalHeight = totalRows * cardHeight;
+
+  // Animation control
   const controls = useAnimation();
-  const totalRows = rows.length;
-  const totalHeight = rowHeight * totalRows;
 
   useEffect(() => {
     controls.start({
-      y: [-0, -totalHeight],
+      y: [0, -totalHeight / 2],
       transition: {
-        duration: totalRows * 3, // 3s per row
+        duration: totalRows * 2.5, // speed
         ease: "linear",
         repeat: Infinity,
         repeatType: "loop"
@@ -213,37 +215,71 @@ export function AnimatedTestimonialsWithParticles() {
 
   // Compute the visible testimonials in order, looping as needed
   return (
-    <section
-      className="relative py-24 text-foreground overflow-hidden"
-      style={{
-        background: "linear-gradient(180deg, #dbeafe 0%, #2563eb 100%)"
-      }}
-    >
+    <section className="relative py-24 text-foreground overflow-hidden bg-gradient-to-b from-white to-blue-300 flex items-center justify-center">
       <div className="absolute inset-0">
         <FloatingParticles count={15} />
       </div>
-      <div className="relative z-10 max-w-6xl mx-auto px-9">
+      <div className="relative z-10 max-w-6xl mx-auto px-9 flex flex-col items-center justify-center">
         <div className="text-center mb-12">
           <span className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-card/50 border border-border backdrop-blur-sm mb-6">
-            <Sparkles className="h-4 w-4 text-primary animate-spin" />
             <span className="text-sm font-medium text-muted-foreground">✨ Testimonials</span>
           </span>
           <h2 className="text-4xl sm:text-5xl font-bold mb-6 tracking-tight">
             <span className="text-foreground">What our users say</span>
           </h2>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, idx) => (
-            <TestimonialCard
-              key={testimonial.author.name + idx}
-              author={testimonial.author}
-              text={testimonial.text}
-              href={testimonial.href}
-              className="w-full h-full shadow-lg border border-black bg-white transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:border-blue-500"
-            />
-          ))}
+        <div className="relative h-[660px] w-full overflow-hidden flex items-center justify-center">
+          {/* Top blur */}
+          <div className="pointer-events-none absolute top-0 left-0 w-full h-24 z-10"
+            style={{
+              background: "linear-gradient(to bottom, #fff 60%, transparent 100%)",
+              filter: "blur(8px)",
+            }}
+          />
+          {/* Bottom blur */}
+          <div className="pointer-events-none absolute bottom-0 left-0 w-full h-24 z-10"
+            style={{
+              background: "linear-gradient(to top, #fff 60%, transparent 100%)",
+              filter: "blur(8px)",
+            }}
+          />
+          <motion.div
+            animate={controls}
+            className="flex flex-col gap-0"
+            style={{ willChange: "transform" }}
+          >
+            {allRows.map((row, rowIdx) => (
+              <div key={rowIdx} className="flex gap-8 justify-center items-center" style={{ height: cardHeight }}>
+                {row.map((testimonial, idx) => (
+                  <motion.div
+                    key={testimonial.author.name + idx + rowIdx}
+                    className="w-full h-full"
+                    style={{
+                      minWidth: 320,
+                      maxWidth: 320,
+                      // Remove blur/opacity logic here!
+                    }}
+                  >
+                    <TestimonialCard
+                      author={testimonial.author}
+                      text={testimonial.text}
+                      href={testimonial.href}
+                      className="shadow-lg border border-black bg-white transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:border-blue-500"
+                    />
+                  </motion.div>
+                ))}
+              </div>
+            ))}
+          </motion.div>
         </div>
       </div>
+      <style>
+        {`
+          /* Hide scrollbar for the testimonials loop */
+          .hide-scrollbar::-webkit-scrollbar { display: none; }
+          .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        `}
+      </style>
     </section>
   );
 }
