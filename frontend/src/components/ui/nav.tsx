@@ -22,6 +22,11 @@ const menuItems = [
 		icon: solutions,
 	},
 	{
+		name: " For Companies",
+		href: "/companies",
+		icon: platform, // Reusing platform icon temporarily
+	},
+	{
 		name: "About",
 		href: "/about",
 		icon: about,

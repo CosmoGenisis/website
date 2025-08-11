@@ -171,6 +171,7 @@ const menuItems = [
     { name: 'Solution', href: '#link' },
     { name: 'Pricing', href: '#link' },
     { name: 'About', href: '#link' },
+    { name: 'For Companies', href: '#link' },
 ]
 
 export const HeroHeader = () => {
@@ -194,7 +195,7 @@ export const HeroHeader = () => {
     )
 }
 
-const LogoCloud = () => {
+{/*const LogoCloud = () => {
     return (
         <section className="pt-8 pb-12 sm:pb-16 md:pb-20 bg-[#fce9db] mt-0">
             <div className="group relative m-auto max-w-6xl px-4 sm:px-6">
@@ -294,4 +295,4 @@ const LogoCloud = () => {
             </div>
         </section>
     )
-}
+}*/}
