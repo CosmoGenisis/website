@@ -32,17 +32,17 @@ export function CompanyTabsShowcase() {
   return (
     <div className="w-full flex justify-center py-12">
       <div
-        className="relative w-full max-w-[1500px] rounded-[32px] overflow-hidden"
+        className="relative w-full max-w-[1600px] rounded-[32px] overflow-hidden"
         style={{
           background: `url(${img1}) center/cover no-repeat`,
         }}
       >
       {/* Tabs */}
-      <div className="flex gap-8 bg-white/80 rounded-full px-8 py-4 shadow-lg mt-8 mb-12 mx-auto w-fit">
+      <div className="flex gap-32 bg-white/80 rounded-full px-8 py-4 shadow-lg mt-8 mb-12 mx-auto w-fit">
         {TABS.map((tab, idx) => (
           <button
             key={tab.label}
-            className={`text-xl font-semibold px-4 py-2 rounded-full transition-all ${
+            className={`text-2xl font-semibold px-4 py-2 rounded-full transition-all ${
               active === idx
                 ? "bg-black text-white shadow"
                 : "bg-white text-black"
@@ -58,35 +58,33 @@ export function CompanyTabsShowcase() {
       </div>
       {/* Card with gap from edges */}
         <div className="w-full flex justify-center items-center relative">
-  {/* Gradient background */}
-  <div
-    className="absolute rounded-t-3xl"
-    style={{
-      width: "95%", // slightly wider than the image
-      maxWidth: "960px", // slightly more than image max width
-      height: "680px", // slightly taller than image height
-      background: "linear-gradient(180deg, rgba(255,255,255,0.4), rgba(255,255,255,0))",
-      zIndex: 0,
-    }}
-  ></div>
+          {/* Gradient background */}
+          <div
+            className="absolute rounded-t-3xl"
+            style={{
+              width: "95%", // slightly wider than the image
+              maxWidth: "1160px", // slightly more than image max width
+              height: "680px", // slightly taller than image height
+              background: "linear-gradient(180deg, rgba(255,255,255,0.4), rgba(255,255,255,0))",
+              zIndex: 0,
+            }}
+          ></div>
 
-  {/* Image container */}
-  <div
-    className="rounded-t-3xl bg-white/90 overflow-hidden relative z-10"
-    style={{ width: "90%", maxWidth: "900px" }}
-  >
-    <img
-      src={TABS[active].image}
-      alt={TABS[active].label}
-      className="object-cover w-full h-[620px] transition-all duration-700"
-      style={{
-        objectPosition: "center",
-      }}
-    />
-  </div>
-</div>
-
-
+          {/* Image container */}
+          <div
+            className="rounded-t-3xl bg-white/90 overflow-hidden relative z-10"
+            style={{ width: "90%", maxWidth: "1100px" }}
+          >
+            <img
+              src={TABS[active].image}
+              alt={TABS[active].label}
+              className="object-cover w-full h-[620px] transition-all duration-700"
+              style={{
+                objectPosition: "center",
+              }}
+            />
+          </div>
+        </div>
       </div>
     </div>
   );

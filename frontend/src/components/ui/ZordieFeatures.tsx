@@ -209,84 +209,14 @@ function AnimatedTextCarousel({ messages }: { messages: string[] }) {
 }
 
   return (
-      <div className="min-h-screen bg-white py-16 px-4">
-      <div className="max-w-7xl mx-auto">
-        {/* Header Section */}
-        <div className="text-center mb-16">
-          <h1 className="text-5xl font-bold text-gray-900 mb-6">Why Choose Zordie AI</h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Empowering businesses with seamless customer management and actionable insights.
-          </p>
-        </div>
-
-        {/* Main Content */}
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
-          {/* Left Side - Features */}
-          <div>
-            <div className="flex items-center gap-2 mb-8">
-              <div className="w-2 h-2 bg-gray-800 rotate-45"></div>
-              <span className="text-sm font-medium text-gray-600 uppercase tracking-wide">Features</span>
-            </div>
-
-            <h2 className="text-4xl font-bold text-gray-900 mb-8 leading-tight">
-              Powerful Features to
-              <br />
-              Simplify Hiring Workflow
-            </h2>
-
-            <p className="text-lg text-gray-600 mb-12">
-              Our platform offers tools designed to streamline HR processes, boost efficiency, and enhance the employee
-              experience.
-            </p>
-
-            {/* Accordion */}
-            <div className="space-y-4">
-              {features.map((feature) => (
-                <div key={feature.id} className="border-b border-gray-200">
-                  <button
-                    onClick={() => toggleItem(feature.id)}
-                    className="w-full py-6 flex items-center justify-between text-left hover:bg-gray-50 transition-colors duration-200"
-                  >
-                    <div className="flex items-center gap-4">
-                      <span className="text-lg font-medium text-gray-500">[{feature.id}]</span>
-                      <span className="text-xl font-semibold text-gray-900">{feature.title}</span>
-                    </div>
-                  </button>
-
-                  {expandedItem === feature.id && (
-                    <div className="pb-6 pl-12 pr-8">
-                      <p className="text-gray-600 leading-relaxed">{feature.description}</p>
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Right Side - Video */}
-          <div className="flex flex-col items-center justify-center mt-20 lg:mt-0">
-        <div className="w-full lg:w-[520px] xl:w-[600px]">
-          <div className="p-8 rounded-3xl bg-gradient-to-br from-orange-50 via-blue-50 to-blue-100 border border-orange-200/40 shadow-2xl backdrop-blur-sm ring-1 ring-blue-200/30">
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-white ring-1 ring-orange-300/50 shadow-orange-500/10">
-              <div className="aspect-video">
-                <img
-                  src={dash}
-                  title="Zordie AI Demo Video"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              {/* Optional decorative gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-orange-500/10 via-transparent to-blue-500/5 pointer-events-none"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      </div>
-      </div>
-      
-      <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4 md:px-12 xl:px-40">
+      <div className="min-h-screen bg-gradient-to-b from-blue-200 to-blue-100 py-16 px-4">
+      <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4 md:px-12 xl:px-28">
       {/* Superior Performance Card */}
-      <div className="lg:col-span-2 rounded-[48px] bg-gradient-to-br from-teal-400 to-blue-800 p-12 flex flex-col justify-between min-h-[520px] shadow-xl relative overflow-hidden">
+      <div className="lg:col-span-2 rounded-[48px] p-12 flex flex-col justify-between min-h-[520px] shadow-xl relative overflow-hidden"
+      style={{
+        background: "linear-gradient(180deg, #20b694 0%, #0f8ecb 50%, #0046c2 100%)"
+      }}
+      >
         <div>
           <div className="text-5xl md:text-4xl font-bold text-white mb-4">Superior Performance</div>
           <div className="text-xl text-white/90 mb-12 max-w-3xl">
@@ -324,7 +254,11 @@ function AnimatedTextCarousel({ messages }: { messages: string[] }) {
         </div>
       </div>
       {/* Lightning Fast Card */}
-      <div className="rounded-[48px] bg-gradient-to-br from-teal-400 to-blue-900 p-10 flex flex-col justify-between min-h-[420px] shadow-xl relative overflow-hidden">
+      <div className="rounded-[48px] p-10 flex flex-col justify-between min-h-[420px] shadow-xl relative overflow-hidden"
+      style={{
+        background: "linear-gradient(180deg, #20b694 0%, #0f8ecb 50%, #0046c2 100%)"
+      }}
+      >
         <div>
           <div className="text-5xl md:text-4xl font-bold text-white mb-4">Lightning Fast</div>
           <div className="text-xl text-white/90 mb-12 max-w-xl">
@@ -345,7 +279,12 @@ function AnimatedTextCarousel({ messages }: { messages: string[] }) {
     {/* Moved keyframes and animation classes to index.css */}
 
       {/* Seamless Integration */}
-      <div className="rounded-[48px] bg-gradient-to-br from-teal-400 to-blue-900 p-10 flex flex-col justify-between min-h-[420px] shadow-xl relative overflow-hidden">
+      <div className="rounded-[48px] p-10 flex flex-col justify-between min-h-[420px] shadow-xl relative overflow-hidden"
+      style={{
+        background: "linear-gradient(180deg, #0958d9 0%, #2563eb 50%, #c78a75 100%)",
+
+      }}
+      >
         <div>
           <div className="text-5xl md:text-5xl font-bold text-white mb-4">Seamless Integration</div>
         <div className="text-xl text-white/90 mb-12 max-w-xl">
@@ -390,7 +329,12 @@ function AnimatedTextCarousel({ messages }: { messages: string[] }) {
       </div>
 
       {/* Auto AI Updates */}
-      <div className="lg:col-span-2 rounded-[48px] bg-gradient-to-br from-teal-400 to-blue-800 p-12 flex flex-col justify-between min-h-[520px] shadow-xl relative overflow-hidden">
+      <div className="lg:col-span-2 rounded-[48px] p-12 flex flex-col justify-between min-h-[520px] shadow-xl relative overflow-hidden"
+      style={{
+        background: "linear-gradient(180deg, #0958d9 0%, #2563eb 50%, #c78a75 100%)",
+
+      }}
+      >
         <div>
          <div className="text-5xl md:text-4xl font-bold text-white mb-4">Auto AI Updates</div>
         <div className="text-xl text-white/90 mb-12 max-w-3xl">

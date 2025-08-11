@@ -100,11 +100,11 @@ function AnimatedCard({ children }: { children: React.ReactNode }) {
 
 export function CompanyFeaturesCards() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-blue-50 flex flex-col items-center px-4 py-12">
+    <div className="min-h-screen bg-gradient-to-b from-white to-blue-300 flex flex-col items-center px-4 py-12">
       {/* Heading */}
       <div className="mb-4 flex justify-center">
         <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 text-gray-700 font-medium shadow">
-          <span className="text-xs font-semibold">★</span>
+          <span className="text-xl font-semibold">★</span>
           Smart. Simple. Scalable.
         </span>
       </div>
@@ -116,7 +116,7 @@ export function CompanyFeaturesCards() {
       </p>
 
       {/* Intro */}
-      <div className="w-full max-w-7xl mx-auto mb-16">
+      <div className="w-full max-w-[1500px] mx-auto mb-16">
         <div className="flex items-center gap-2 mb-4">
           <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-gray-700 font-medium text-sm">
             <span className="text-xs font-semibold">★</span>Features
@@ -135,7 +135,7 @@ export function CompanyFeaturesCards() {
       </div>
 
       {/* Feature Cards */}
-      <div className="w-full max-w-7xl flex flex-col gap-12">
+      <div className="w-full max-w-[1500px] flex flex-col gap-12">
         {features.map((feature, idx) => (
           <AnimatedCard key={feature.title}>
             <div className="flex flex-col md:flex-row items-center bg-white rounded-3xl overflow-hidden">

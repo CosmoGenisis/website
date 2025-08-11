@@ -89,7 +89,7 @@ export default function UserTestimonials() {
       {/* Animated Rows */}
       <div className="w-full flex flex-col gap-8 items-center justify-center">
         {/* Row 1: Right to Left */}
-        <div className="overflow-hidden w-full">
+        <div className="overflow-hidden w-[1600px]">
           <motion.div
             ref={row1Ref}
             className="flex items-center w-max"
@@ -108,7 +108,7 @@ export default function UserTestimonials() {
           </motion.div>
         </div>
         {/* Row 2: Left to Right */}
-        <div className="overflow-hidden w-full">
+        <div className="overflow-hidden w-[1600px]">
           <motion.div
             ref={row2Ref}
             className="flex items-center w-max"
