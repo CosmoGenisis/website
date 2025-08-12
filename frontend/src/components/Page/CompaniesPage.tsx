@@ -27,14 +27,29 @@ import UserTestimonials from '../blocks/UserTestimonials'
 import FaqPage from '../blocks/FaqPage2'
 import HeroSmarterHiring from '../blocks/HeroSmarterHiring'
 
+import img1 from "@/images/Company_background.png";
+import img2 from "@/images/Company_img1.png";
+
 
 export const CompaniesPage=()=>{
     return(
         <div className="relative bg-white">
             <div className="h-full max-h-[800px] overflow-hidden">
-            <HeroSection></HeroSection>
+            <HeroSection
+                heading={<>Your AI Hiring Partner<br />From Start To Finish</>}
+                subheading="Hire Smarter, Faster, and at Scale with Zero Manual Effort"
+                buttonText="Get Started"
+                onButtonClick={() => {/* your handler */}}
+                />
             </div>
-            <CompanyTabsShowcase />
+            <CompanyTabsShowcase
+                tabs={[
+                    { label: "Activate Talent Pool", image: img2 },
+                    { label: "Interview Services", image: img2 },
+                    { label: "Automated Candidate Onboarding", image: img2 },
+                ]}
+                backgroundImage={img1}
+                />
             <CompanyFeaturesCards />
             <AgentsIntegrationDiagram />
             <ZordieFeatures />

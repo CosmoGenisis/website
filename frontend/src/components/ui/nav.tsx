@@ -22,9 +22,14 @@ const menuItems = [
 		icon: solutions,
 	},
 	{
-		name: " For Companies",
+		name: "For Companies",
 		href: "/companies",
 		icon: platform, // Reusing platform icon temporarily
+	},
+	{
+		name: "For Job Seakers",
+		href: "/job-seekers",
+		icon: platform,
 	},
 	{
 		name: "About",
@@ -70,7 +75,7 @@ export default function Navbar() {
 				isScrolled ? "bg-white/40 shadow-md" : "bg-white/20 shadow-lg",
 				isScrolled ? "py-1" : "py-2",
 				"rounded-full mx-auto left-0 right-0 mt-4",
-				isScrolled ? "max-w-3xl" : "max-w-5xl",
+				isScrolled ? "max-w-7xl" : "max-w-[1400px]",
 				"px-2 sm:px-4 md:px-6 lg:px-8 xl:px-10",
 				"backdrop-blur-xl pointer-events-auto"
 			)}
@@ -105,33 +110,22 @@ export default function Navbar() {
 
 				{/* Navigation Links - Center */}
 				<div className="hidden lg:flex items-center justify-center col-span-6">
-					<div className="flex justify-center w-full space-x-4 md:space-x-8">
-						{/* Features button */}
-						<Button asChild size="sm" variant="ghost" className={cn(
-							"rounded-full font-semibold transition-all duration-300 px-2 md:px-3 py-1 text-ellipsis overflow-hidden whitespace-nowrap",
-							isScrolled ? "text-xs" : "text-sm"
-						)}>
-							<Link to={menuItems[0].href} className="truncate overflow-hidden text-center">{menuItems[0].name}</Link>
-						</Button>
-						<Button asChild size="sm" variant="ghost" className={cn(
-							"rounded-full font-semibold transition-all duration-300 px-2 md:px-3 py-1 text-ellipsis overflow-hidden whitespace-nowrap",
-							isScrolled ? "text-xs" : "text-sm"
-						)}>
-							<Link to={menuItems[1].href} className="truncate overflow-hidden text-center">{menuItems[1].name}</Link>
-						</Button>
-						<Button asChild size="sm" variant="ghost" className={cn(
-							"rounded-full font-semibold transition-all duration-300 px-2 md:px-3 py-1 text-ellipsis overflow-hidden whitespace-nowrap",
-							isScrolled ? "text-xs" : "text-sm"
-						)}>
-							<Link to={menuItems[2].href} className="truncate overflow-hidden text-center">{menuItems[2].name}</Link>
-						</Button>
-						<Button asChild size="sm" variant="ghost" className={cn(
-							"rounded-full font-semibold transition-all duration-300 px-2 md:px-3 py-1 text-ellipsis overflow-hidden whitespace-nowrap",
-							isScrolled ? "text-xs" : "text-sm"
-						)}>
-							<Link to={menuItems[3].href} className="truncate overflow-hidden text-center">{menuItems[3].name}</Link>
-						</Button>
-					</div>
+				<div className="flex justify-center w-full space-x-4 md:space-x-8">
+					{menuItems.map((item, idx) => (
+					<Button
+						asChild
+						size="sm"
+						variant="ghost"
+						key={item.name}
+						className={cn(
+						"rounded-full font-semibold transition-all duration-300 px-2 md:px-3 py-1 text-ellipsis overflow-hidden whitespace-nowrap",
+						isScrolled ? "text-xs" : "text-sm"
+						)}
+					>
+						<Link to={item.href} className="truncate overflow-hidden text-center">{item.name}</Link>
+					</Button>
+					))}
+				</div>
 				</div>
 
 				{/* Right side buttons */}
