@@ -25,12 +25,24 @@ import FeatureBentoGrid from '../blocks/FeatureBentoGrid'
 import RecruiterAiTools from '../blocks/RecruiterAiTools'
 import UserTestimonials from '../blocks/UserTestimonials'
 import { CandidateFeaturesShowcase } from '../blocks/CandidateFeaturesShowcase'
-import FaqPage from '../blocks/FaqPage2'
+import {WhyZordieWorks} from '../blocks/WhyZordieWorks'
+import {CareerGrowthBenefitSection} from '../blocks/CareerGrowthBenefitSection'
+import { UserTestimonialSection } from '../blocks/UserTestimonialSection'
+import FaqPage2 from '../blocks/FaqPage2'
 import HeroSmarterHiring from '../blocks/HeroSmarterHiring'
 import img1 from "@/images/Job-seekers_background.png";
 import img2 from "@/images/Job-seekers_1.png";
 import img3 from "@/images/Job-seekers_2.png";
+import img4 from "@/images/agent4.png"
+import img5 from "@/images/Growth_1.png"
+import userImg from "@/images/user.png";
+import sceneImg from "@/images/Testimonial.png";
+import ava from "@/images/Avatar_2.png";
 import vid1 from "@/images/Job-seekers_video_1.mp4";
+import { FiZap, FiArchive, FiBookmark } from "react-icons/fi";
+
+
+
 
 
 export const JobSeekersPage=()=>{
@@ -79,10 +91,74 @@ export const JobSeekersPage=()=>{
                     ],
                 }}
                 />
-            <AgentsIntegrationDiagram />
-            <ZordieFeatures />
-            <AnimatedTestimonialsWithParticles />
-            <FaqPage />
+                <WhyZordieWorks
+                    image={img4}
+                    heading={<>Why Zordie<br />Works for You</>}
+                    capabilities={[
+                        { text: "Practice interviews anytime, from anywhere" },
+                        { text: "Get automatically tailored resumes for every application" },
+                        { text: "Have your own AI guide to track and improve your journey" },
+                        { text: "Focus only on jobs you're passionate about" },
+                        { text: "Skip scams - get access to verified, paying companies" },
+                        { text: "Build confidence and improve with every session" },
+                    ]}
+                    />
+                <CareerGrowthBenefitSection
+                    heading={<>The Key Benefits of AI<br />for Your Career Growth</>}
+                    subheading="Discover how AI-powered tools help you save time, improve your skills, and unlock better job opportunities with smarter, faster support."
+                    card={{
+                        icon: "💡",
+                        title: <>Verified Internship &amp; Fresher Job Listings</>,
+                        description: (
+                        <>
+                            No fake promises. No scams. Every job listed on Zordie is from <b>verified companies</b> actively hiring and paying real talent.
+                        </>
+                        ),
+                        image: img5,
+                        imageAlt: "Zordie Dashboard",
+                    }}
+                    features={[
+                         {icon: <FiZap className="w-6 h-6 text-black" />, title: "Get Discovered by Top Startups & Employers", description: "Stand out in front of companies hiring through Zordie. Let your interview performance and smart resume do the talking."},
+                         {icon: <FiArchive className="w-6 h-6 text-black" />, title: "Interview Timeline", description: "View upcoming and past interviews at a glance to stay on top of your hiring journey."},
+                         {icon: <FiBookmark className="w-6 h-6 text-black" />, title: "Discover Jobs & Events", description: "Instantly access top roles, trending career paths, and hiring events tailored to your interests."},
+                    ]}
+                    />
+                <UserTestimonialSection
+                    heading="See what our users are saying."
+                    user={{
+                        avatar: ava,
+                        name: "Dennis J. Lester",
+                        role: "Senior Frontend Developer",
+                        testimonial: "Everything I needed - jobs, resources, events - was in one place. No more endless searches.",
+                        rating: 4.7,
+                        maxRating: 5,
+                    }}
+                    image={userImg}
+                    />
+                <FaqPage2
+                    faqs={[
+                        { question: "What is Zordie for Job Seekers?", answer: "Zordie is an AI-powered hiring and career platform designed for both recruiters and job seekers to simplify hiring and job discovery." },
+                        { question: "How does Zordie improve efficiency?",answer: "Recruiters can automate job posting, screen candidates using AI, manage pipelines, and collaborate with their teams in one dashboard.",},
+                        {question: "How i track my Interview Progress", answer: "Job seekers can discover verified jobs, track interviews, participate in hiring contests, and get skill-based insights to improve.",},
+                        {question: "How is Zordie different from other hiring/job platforms?",answer: "Zordie integrates smart screening, AI orchestration, candidate insights, and end-to-end tracking for both recruiters and candidates.",},
+                        { question: "Can I verify projects, portfolios, or certifications on Zordie?",answer: "Yes, Zordie auto-verifies GitHub projects, certifications, and portfolios using intelligent crawling and authenticity checks.",},
+                        {question: "Are contests and challenges open to everyone?",answer: "Yes! Contests are open to all verified job seekers and often lead to direct hiring by top companies.",},
+                                                // ...
+                    ]}
+                    heading={<>Answers to your<br />common AI questions</>}
+                    badge="FAQ"
+                    banner={{
+                        background: "linear-gradient(120deg, #041E2F 0%, #5bb6f9 40%, #eaf6ff 100%)",
+                        title: <>Hire Smarter with Zordie</>,
+                        subtitle: "From job posting to onboarding - all in one platform.",
+                        buttonText: "Start Hiring Now",
+                        onButtonClick: () => {/* your handler */},
+                        peopleImages: [
+                        { src: img3, alt: "Person 1", style: { left: "40%", bottom: 0, transform: "translate(-60%, 0%)" } },
+                        { src: img4, alt: "Person 2", style: { left: "60%", bottom: 0, transform: "translate(-20%, 0%)" } },
+                        ],
+                    }}
+                    />
             <FooterDemo />
         </div>
     )

@@ -89,7 +89,7 @@ export function CandidateFeaturesShowcase({
           </div>
           {/* Right: Video */}
           <div className="flex items-center justify-center ">
-            <div className="w-full max-w-[570px] aspect-[4/5] rounded-2xl overflow-hidden shadow-lg bg-gray-100 flex items-center justify-center">
+            <div className="w-full max-w-[590px] aspect-[4/5] rounded-2xl overflow-hidden shadow-lg bg-gray-100 flex items-center justify-center">
               <video
                 src={videoSrc}
                 autoPlay
