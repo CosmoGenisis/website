@@ -33,8 +33,10 @@ import HeroSmarterHiring from '../blocks/HeroSmarterHiring'
 import img1 from "@/images/Job-seekers_background.png";
 import img2 from "@/images/Job-seekers_1.png";
 import img3 from "@/images/Job-seekers_2.png";
-import img4 from "@/images/agent4.png"
-import img5 from "@/images/Growth_1.png"
+import img4 from "@/images/agent4.png";
+import img5 from "@/images/Growth_1.png";
+import img6 from "@/images/Faq_background_2.png";
+import img7 from "@/images/Faq_3.png";
 import userImg from "@/images/user.png";
 import sceneImg from "@/images/Testimonial.png";
 import ava from "@/images/Avatar_2.png";
@@ -148,14 +150,13 @@ export const JobSeekersPage=()=>{
                     heading={<>Answers to your<br />common AI questions</>}
                     badge="FAQ"
                     banner={{
-                        background: "linear-gradient(120deg, #041E2F 0%, #5bb6f9 40%, #eaf6ff 100%)",
-                        title: <>Hire Smarter with Zordie</>,
-                        subtitle: "From job posting to onboarding - all in one platform.",
-                        buttonText: "Start Hiring Now",
+                        background: img6,
+                        title: <>Start Your Career Journey with Zordie</>,
+                        subtitle: "Make yourself job-ready. Apply with purpose. Get hired with confidence",
+                        buttonText: "Start Practicing Now",
                         onButtonClick: () => {/* your handler */},
                         peopleImages: [
-                        { src: img3, alt: "Person 1", style: { left: "40%", bottom: 0, transform: "translate(-60%, 0%)" } },
-                        { src: img4, alt: "Person 2", style: { left: "60%", bottom: 0, transform: "translate(-20%, 0%)" } },
+                        { src: img7, alt: "Person 1", style: { position: "absolute", top: "60%", left: "50%", transform: "translate(-50%, -50%)", width: "150%", height: "150%", objectFit: "cover", zIndex: 10 } },
                         ],
                     }}
                     />

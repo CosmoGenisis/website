@@ -70,7 +70,7 @@ export const CompaniesPage=()=>{
             heading={<>Answers to your<br />common AI questions</>}
             badge="FAQ"
             banner={{
-                background: "linear-gradient(120deg, #5bb6f9 0%, #7ec6ff 40%, #eaf6ff 100%)",
+                background: img5,
                 title: <>Hire Smarter with Zordie</>,
                 subtitle: "From job posting to onboarding - all in one platform.",
                 buttonText: "Start Hiring Now",

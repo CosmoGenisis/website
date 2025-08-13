@@ -92,31 +92,22 @@ export default function FaqPage2({
       {/* Hero Banner Card at the End */}
       <div className="w-full flex justify-center mt-12 sm:mt-16">
         <div
-          className="w-full max-w-[1400px] min-h-[320px] sm:min-h-[380px] rounded-[32px] sm:rounded-[56px] flex flex-col md:flex-row items-center justify-center relative overflow-hidden"
+          className="w-full max-w-[1500px] min-h-[320px] sm:min-h-[380px] rounded-[16px] sm:rounded-[24px] flex flex-col md:flex-row items-center justify-center relative overflow-hidden"
           style={{
-            background: banner.background,
+            background: banner.background ? undefined : undefined,
           }}
         >
-          {/* Decorative clouds and lines */}
-          <svg
-            className="absolute inset-0 w-full h-full pointer-events-none"
-            viewBox="0 0 1200 380"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            style={{ zIndex: 1 }}
-          >
-            <ellipse cx="300" cy="320" rx="180" ry="60" fill="#fff" fillOpacity="0.35" />
-            <ellipse cx="900" cy="340" rx="160" ry="50" fill="#fff" fillOpacity="0.32" />
-            <ellipse cx="700" cy="260" rx="120" ry="40" fill="#fff" fillOpacity="0.22" />
-            <ellipse cx="500" cy="120" rx="90" ry="30" fill="#fff" fillOpacity="0.18" />
-            <ellipse cx="1050" cy="80" rx="70" ry="22" fill="#fff" fillOpacity="0.13" />
-            <line x1="200" y1="80" x2="400" y2="140" stroke="#fff" strokeWidth="2" strokeOpacity="0.18" />
-            <line x1="800" y1="60" x2="1100" y2="120" stroke="#fff" strokeWidth="2" strokeOpacity="0.18" />
-            <line x1="600" y1="200" x2="900" y2="260" stroke="#fff" strokeWidth="2" strokeOpacity="0.12" />
-          </svg>
+          {/* Background image */}
+          <img
+            src={banner.background}
+            alt="Banner background"
+            className="absolute inset-0 w-full h-full object-cover object-center z-0"
+            style={{ pointerEvents: "none" }}
+            draggable={false}
+          />
           {/* Overlay for better text readability */}
-          <div className="absolute inset-0 bg-blue-700/10 backdrop-blur-sm rounded-[32px] sm:rounded-[56px]" style={{ zIndex: 2 }}></div>
-          <div className="relative z-10 flex flex-col md:flex-row items-center justify-center w-full h-full px-4 sm:px-8 py-8 sm:py-12">
+          <div className="absolute inset-0 bg-blue-700/10 backdrop-blur-sm rounded-[32px] sm:rounded-[56px] z-10"></div>
+          <div className="relative z-20 flex flex-col md:flex-row items-center justify-center w-full h-full px-4 sm:px-8 py-8 sm:py-12">
             {/* Left: Text */}
             <div className="flex-1 flex flex-col items-center md:items-start justify-center text-center md:text-left mb-8 md:mb-0">
               <h2 className="text-2xl sm:text-5xl md:text-6xl font-bold text-white mb-4 sm:mb-6">
