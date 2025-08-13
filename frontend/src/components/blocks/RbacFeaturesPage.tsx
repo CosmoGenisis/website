@@ -57,11 +57,31 @@ const pills2 = [
   "Autonomous Workflow Execution"
 ];
 
+
 const marqueeDuration = 22; // seconds
 
 export function RbacFeaturesPage() {
   return (
     <div className="min-h-4xl bg-black flex flex-col items-center py-16 px-2">
+      {/* Feature Cards Grid */}
+      <section className="w-full py-16 px-4 bg-black flex justify-center">
+        <div className="max-w-7xl w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {features.map((feature, idx) => (
+            <motion.div
+              key={feature.title}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.1 * idx }}
+              className="bg-white rounded-2xl shadow-xl p-8 flex flex-col gap-4"
+            >
+              <div>{feature.icon}</div>
+              <h3 className="text-2xl font-semibold text-gray-900">{feature.title}</h3>
+              <p className="text-gray-600 text-base">{feature.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
       {/* Marquee Pills Row 1 (left to right) */}
       <div className="relative w-full overflow-x-hidden mb-16 mt-16" style={{ height: 60 }}>
         {/* Gradient fade left/right */}

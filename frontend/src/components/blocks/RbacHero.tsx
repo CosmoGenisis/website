@@ -3,6 +3,39 @@ import { motion } from "framer-motion";
 import { EyeOff, Shield } from "lucide-react";
 import React, { useRef, useState, useEffect } from "react";
 
+const features = [
+  {
+    icon: <span className="inline-block p-3 bg-violet-100 rounded-xl shadow"><svg width="28" height="28" fill="none"><rect width="28" height="28" rx="8" fill="#fff"/><path d="M14 8v12M8 14h12" stroke="#8b5cf6" strokeWidth="2" strokeLinecap="round"/></svg></span>,
+    title: "Orchestration",
+    desc: "Dynamically manages and connects Optimus, Monica, Emma, Onix, Maxi, and Laxmi.",
+  },
+  {
+    icon: <span className="inline-block p-3 bg-violet-100 rounded-xl shadow"><svg width="28" height="28" fill="none"><rect width="28" height="28" rx="8" fill="#fff"/><path d="M14 8l6 12H8l6-12z" stroke="#8b5cf6" strokeWidth="2" strokeLinecap="round"/></svg></span>,
+    title: "Workflow Construction",
+    desc: "Builds workflows via chat input—no need for drag-and-drop. Manual override available.",
+  },
+  {
+    icon: <span className="inline-block p-3 bg-violet-100 rounded-xl shadow"><svg width="28" height="28" fill="none"><rect width="28" height="28" rx="8" fill="#fff"/><circle cx="14" cy="14" r="6" stroke="#8b5cf6" strokeWidth="2"/><path d="M14 8v4" stroke="#8b5cf6" strokeWidth="2" strokeLinecap="round"/></svg></span>,
+    title: "Agent Supervision",
+    desc: "Detects conflicts, hallucinations, or failures, and overrides the responsible agent.",
+  },
+  {
+    icon: <span className="inline-block p-3 bg-violet-100 rounded-xl shadow"><svg width="28" height="28" fill="none"><rect width="28" height="28" rx="8" fill="#fff"/><path d="M8 20h12M8 8h12M8 14h12" stroke="#8b5cf6" strokeWidth="2" strokeLinecap="round"/></svg></span>,
+    title: "System Copilot",
+    desc: `Converts simple commands (e.g., “Hire 5 designers”) into a multi-agent hiring-to-onboarding pipeline.`,
+  },
+  {
+    icon: <span className="inline-block p-3 bg-violet-100 rounded-xl shadow"><svg width="28" height="28" fill="none"><rect width="28" height="28" rx="8" fill="#fff"/><path d="M8 14h12M14 8v12" stroke="#8b5cf6" strokeWidth="2" strokeLinecap="round"/></svg></span>,
+    title: "Offer Letter & Docs",
+    desc: "Drafts, verifies, and dispatches documents like offers, NDAs, and HR policies.",
+  },
+  {
+    icon: <span className="inline-block p-3 bg-violet-100 rounded-xl shadow"><svg width="28" height="28" fill="none"><rect width="28" height="28" rx="8" fill="#fff"/><path d="M14 8v12M8 14h12" stroke="#8b5cf6" strokeWidth="2" strokeLinecap="round"/></svg></span>,
+    title: "Context Keeper",
+    desc: "Maintains memory across agents and workflows via MCP (Model Context Protocol).",
+  },
+];
+
 export function RbacHero() {
   const [mousePath, setMousePath] = useState<{ x: number; y: number }[]>([]);
   const [isDrawing, setIsDrawing] = useState(false);

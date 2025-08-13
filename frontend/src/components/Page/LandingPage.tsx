@@ -26,6 +26,9 @@ import RecruiterAiTools from '../blocks/RecruiterAiTools'
 import UserTestimonials from '../blocks/UserTestimonials'
 import FaqPage from '../blocks/FaqPage'
 import HeroSmarterHiring from '../blocks/HeroSmarterHiring'
+import img1 from "@/images/Background_1.png";
+import img2 from "@/images/People_8.png";
+import img3 from "@/images/Home.png";
 
 
 export const LandingPage=()=>{
@@ -39,7 +42,13 @@ export const LandingPage=()=>{
             <RecruiterAiTools />
             <UserTestimonials />
             <FaqPage />
-            <HeroSmarterHiring />
+            <HeroSmarterHiring 
+              title= {"Smart Hiring Starts Here"}
+              subtitle={"All-in-one AI platform to find, assess, and onboard top talent faster."}
+              buttonText={"Get Started"}
+              backgroundImage={img1}
+              personImage={img2}
+            />
             <FooterDemo />
         </div>
     )
