@@ -29,9 +29,9 @@ export function SolutionHero({
   orbFeatures = [],
 }: SolutionHeroProps) {
   return (
-    <section className="w-full min-h-[600px] flex flex-col md:flex-row items-center justify-between px-4 sm:px-28 py-16 bg-white">
+    <section className="w-full min-h-[600px] flex flex-col md:flex-row items-center justify-between px-4 sm:px-28 py-32 bg-white">
       {/* Left: Text */}
-      <div className="flex-1 flex flex-col justify-center items-start max-w-2xl">
+      <div className="flex-1 flex flex-col justify-center items-start max-w-[60%]">
         <h1 className="text-4xl sm:text-6xl font-bold text-gray-900 mb-6 leading-tight">{heading}</h1>
         <p className="text-lg sm:text-xl text-gray-600 mb-8">{subheading}</p>
         {/* Customers */}
@@ -53,7 +53,7 @@ export function SolutionHero({
         </div>
       </div>
       {/* Right: Orb & Features */}
-      <div className="flex-1 flex items-center justify-center relative w-full max-w-2xl mt-12 md:mt-0">
+      <div className="flex-1 flex items-center justify-center relative w-full max-w-[60%] mt-12 md:mt-0">
         {/* Orb Image */}
         <div className="relative w-full flex items-center justify-center">
           <img

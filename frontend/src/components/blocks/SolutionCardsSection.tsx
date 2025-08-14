@@ -27,7 +27,7 @@ export function SolutionCardsSection({
 }: SolutionCardsSectionProps) {
   return (
     <section className="w-full py-56 px-4 bg-white">
-      <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+      <div className="max-w-[90%] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
         {/* Left Side */}
         <div className="flex flex-col items-start">
           {badge && (
@@ -78,7 +78,7 @@ export function SolutionCardsSection({
             initial={{ opacity: 0, scale: 0.95, y: 30 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.4 }}
-            className="w-full max-w-[500px] max-h-[500px] rounded-xl overflow-hidden object-top shadow-lg"
+            className="w-full max-w-[80%] max-h-[500px] rounded-xl overflow-hidden object-top shadow-lg"
           >
             <img
               src={image}

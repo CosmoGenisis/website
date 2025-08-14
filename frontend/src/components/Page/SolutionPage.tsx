@@ -63,7 +63,7 @@ export function SolutionPage () {
           { icon: <Settings />, label: "Tool-Friendly" },
           { icon: <BarChart3 />, label: "Automation" },
         ]}
-        image={img1}
+        image={img1} 
         features={[
           {
             icon: <BadgeCheck />,

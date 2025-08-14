@@ -178,7 +178,7 @@ export default function ZordieFeatures() {
                   className="w-full flex items-center justify-center"
                   style={{ minHeight: "64px" }}
                 >
-                  <div className="flex-1 max-w-3xl bg-white/20 backdrop-blur-md rounded-2xl border border-white/30 shadow-lg px-10 py-6 flex items-center gap-4">
+                  <div className="flex-1 max-w-[90%] bg-white/20 backdrop-blur-md rounded-2xl border border-white/30 shadow-lg px-10 py-6 flex items-center gap-4">
                     <span className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-600 mr-4">
                       <Sparkles className="w-5 h-5 text-white" />
                     </span>
@@ -227,7 +227,7 @@ export default function ZordieFeatures() {
         >
           <div>
             <div className="text-5xl md:text-4xl font-bold text-white mb-4">Superior Performance</div>
-            <div className="text-xl text-white/90 mb-12 max-w-3xl">
+            <div className="text-xl text-white/90 mb-12 max-w-[80%]">
               Our platform consistently outperforms competitors in speed and efficiency, thanks to cutting-edge technology and optimized infrastructure.
             </div>
           </div>
@@ -269,7 +269,7 @@ export default function ZordieFeatures() {
         >
           <div>
             <div className="text-5xl md:text-4xl font-bold text-white mb-4">Lightning Fast</div>
-            <div className="text-xl text-white/90 mb-12 max-w-xl">
+            <div className="text-xl text-white/90 mb-12 max-w-[90%]">
               Loading times optimized for seamless experience for your users.
             </div>
           </div>
@@ -292,7 +292,7 @@ export default function ZordieFeatures() {
         >
           <div>
             <div className="text-5xl md:text-5xl font-bold text-white mb-4">Seamless Integration</div>
-            <div className="text-xl text-white/90 mb-12 max-w-xl">
+            <div className="text-xl text-white/90 mb-12 max-w-[95%]">
               Integrate flair with all your favourite apps in just a few clicks.
             </div>
           </div>
@@ -339,7 +339,7 @@ export default function ZordieFeatures() {
         >
           <div>
             <div className="text-5xl md:text-4xl font-bold text-white mb-4">Auto AI Updates</div>
-            <div className="text-xl text-white/90 mb-12 max-w-3xl">
+            <div className="text-xl text-white/90 mb-12 max-w-[90%]">
               Our data centres are powered by green energy, reducing our carbon footprint and supporting a cleaner planet.
               {/* Animated Text Carousel */}
               <div className="flex-1 flex items-center justify-center">
@@ -360,7 +360,7 @@ export default function ZordieFeatures() {
       {/* Marquee Card Below Zordie Features */}
       <div className="w-full flex flex-col items-center justify-center mt-20">
         <div
-          className="w-full max-w-[1450px] min-h-[520px] rounded-3xl shadow-2xl p-12 bg-gradient-to-br from-[#020024] via-[#090979] to-[#00d4ff] flex flex-col items-center justify-center relative"
+          className="w-full max-w-[85%] min-h-[520px] rounded-3xl shadow-2xl p-12 bg-gradient-to-br from-[#020024] via-[#090979] to-[#00d4ff] flex flex-col items-center justify-center relative"
           style={{
           boxShadow:"linear-gradient(180deg, rgba(0,0,0,0.9) 0%, rgba(0,23,70,0.9) 100%)",
         }}

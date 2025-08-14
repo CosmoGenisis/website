@@ -240,13 +240,13 @@ export function AgentNetworkSection({
     </section>
 
     {subSection && (
-        <section className="w-full max-w-[1400px] mx-auto mt-20 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <section className="w-full max-w-[90%] mx-auto mt-8 grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-28">
           {/* Left: Image */}
           <div className="w-full flex justify-center">
             <img
               src={subSection.image}
               alt="Agent Collaboration"
-              className="w-full max-w-2xl rounded-2xl object-cover shadow-lg"
+              className="w-full max-w-[80%] rounded-2xl object-cover shadow-lg"
             />
           </div>
           {/* Right: Content */}

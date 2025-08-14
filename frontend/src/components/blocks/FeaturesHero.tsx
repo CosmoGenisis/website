@@ -25,7 +25,7 @@ export function FeaturesHero({
       }}
     >
       {/* Top row */}
-      <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row items-start justify-between gap-16">
+      <div className="max-w-[90%] mx-auto flex flex-col md:flex-row items-start justify-between gap-16">
         {/* Left content */}
         <div className="flex-1">
           <h1 className="text-4xl md:text-6xl font-medium text-black leading-tight mb-12">

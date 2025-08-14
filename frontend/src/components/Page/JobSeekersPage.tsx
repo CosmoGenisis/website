@@ -65,7 +65,7 @@ export const JobSeekersPage=()=>{
                     { label: "Automated Candidate Onboarding", image: img2 },
                 ]}
                 backgroundImage={img1}
-                />
+                /> 
                 <CandidateFeaturesShowcase
                 heading="What You Get as a Candidate"
                 subheading="Our platform provides smart features tailored to help you find the right job, apply with confidence, and stay organized throughout your career journey."

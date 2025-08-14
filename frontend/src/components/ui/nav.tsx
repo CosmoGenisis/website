@@ -10,194 +10,159 @@ import Logo from '@/images/Logo.png'
 import platform from '@/images/Platform.png'
 import solutions from '@/images/Solutions.png'
 import about from '@/images/about.png'
+
 const menuItems = [
-	{
-		name: "Features",
-		href: "/features",
-		icon: platform,
-	},
-	{
-		name: "Solutions",
-		href: "/solutions",
-		icon: solutions,
-	},
-	{
-		name: "For Companies",
-		href: "/companies",
-		icon: platform, // Reusing platform icon temporarily
-	},
-	{
-		name: "For Job Seakers",
-		href: "/job-seekers",
-		icon: platform,
-	},
-	{
-		name: "About",
-		href: "/about",
-		icon: about,
-	},
-	{
-		name: "Contact",
-		href: "/contact",
-		icon: about, // Reusing about icon temporarily
-	},
+  { name: "Features", href: "/features", icon: platform },
+  { name: "Solutions", href: "/solutions", icon: solutions },
+  { name: "For Companies", href: "/companies", icon: platform },
+  { name: "For Job Seekers", href: "/job-seekers", icon: platform },
+  { name: "About", href: "/about", icon: about },
+  { name: "Contact", href: "/contact", icon: about },
 ]
 
 export default function Navbar() {
-	const [isScrolled, setIsScrolled] = useState(false);
-	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-	const navRef = useRef<HTMLDivElement>(null);
+  const [isScrolled, setIsScrolled] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const navRef = useRef<HTMLDivElement>(null)
 
-	// Handle scroll events
-	useEffect(() => {
-		const handleScroll = () => {
-			if (window.scrollY > 10) {
-				setIsScrolled(true);
-			} else {
-				setIsScrolled(false);
-			}
-		};
+  // Handle scroll events
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
-		window.addEventListener('scroll', handleScroll);
-		return () => window.removeEventListener('scroll', handleScroll);
-	}, []);
+  // Toggle mobile menu
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(prev => !prev)
+  }
 
-	// Toggle mobile menu
-	const toggleMobileMenu = () => {
-		setIsMobileMenuOpen(prev => !prev);
-	};
+  return (
+    <nav
+      ref={navRef}
+      className={cn(
+        "fixed z-50 flex justify-center items-start transition-all duration-300",
+        "left-0 right-0 mx-auto mt-4 rounded-full backdrop-blur-xl pointer-events-auto border-b",
+        isScrolled ? "bg-white/40 shadow-md py-[0.3rem]" : "bg-white/20 shadow-lg py-[0.5rem]",
+        isScrolled ? "w-[70%]" : "w-[90%]", // proportional widths
+        "max-w-[1400px]" // cap width on huge screens
+      )}
+    >
+      <div
+        className={cn(
+          "w-full grid grid-cols-12 items-center justify-between transition-all duration-300",
+          isScrolled ? "gap-[1%]" : "gap-[2%]" // percentage-based gaps
+        )}
+      >
+        {/* Logo */}
+<div className="flex items-center min-w-0 flex-shrink-0 col-span-6 sm:col-span-4 md:col-span-3">
+  <Link to="/" className="flex items-center">
+    <img
+      src={Logo}
+      alt="Zordie Logo"
+      className={cn(
+        "transition-all duration-300 w-auto",
+        isScrolled ? "h-[1.8rem]" : "h-[2.8rem]" // slightly bigger
+      )}
+    />
+    <span
+      className={cn(
+        "ml-[6%] font-extrabold text-gray-900 transition-all duration-300 tracking-normal",
+        isScrolled ? "text-sm" : "text-lg" // bigger text for better readability
+      )}
+    >
+      Zordie
+    </span>
+  </Link>
+</div>
 
-	return (
-		<nav
-			ref={navRef}
-			className={cn(
-				"fixed z-50 w-full border-b flex justify-center items-start transition-all duration-300",
-				isScrolled ? "bg-white/40 shadow-md" : "bg-white/20 shadow-lg",
-				isScrolled ? "py-1" : "py-2",
-				"rounded-full mx-auto left-0 right-0 mt-4",
-				isScrolled ? "max-w-7xl" : "max-w-[1400px]",
-				"px-2 sm:px-4 md:px-6 lg:px-8 xl:px-10",
-				"backdrop-blur-xl pointer-events-auto"
-			)}
-		>
-			<div
-				className={cn(
-					"w-full grid grid-cols-12 items-center justify-between transition-all duration-300",
-					isScrolled ? "gap-x-1 sm:gap-x-2 md:gap-x-4" : "gap-x-2 sm:gap-x-4 md:gap-x-6"
-				)}
-			>
-				{/* Logo and brand */}
-				<div className="flex items-center min-w-0 flex-shrink-0 col-span-6 sm:col-span-4 md:col-span-3">
-					<Link to="/" className="flex items-center truncate">
-						<img
-							src={Logo}
-							alt="Zordie Logo"
-							className={cn(
-								"transition-all duration-300",
-								isScrolled ? "h-6" : "h-10",
-								"w-auto max-w-[100px] sm:max-w-[120px] md:max-w-[140px]"
-							)}
-						/>
-						<span className={cn(
-							"ml-2 font-extrabold text-gray-900 transition-all duration-300 tracking-tight truncate",
-							isScrolled ? "text-lg" : "text-2xl",
-							"max-w-[60px] sm:max-w-[80px] md:max-w-[120px]"
-						)}>
-							Zordie
-						</span>
-					</Link>
-				</div>
+        {/* Center Menu */}
+        <div className="hidden lg:flex items-center justify-center col-span-6">
+          <div className="flex justify-center w-full space-x-[3%]">
+            {menuItems.map((item) => (
+              <Button
+                asChild
+                size="sm"
+                variant="ghost"
+                key={item.name}
+                className={cn(
+                  "rounded-full font-semibold transition-all duration-300 px-[2%] py-[0.5%]",
+                  isScrolled ? "text-xs" : "text-sm"
+                )}
+              >
+                <Link to={item.href} className="truncate">{item.name}</Link>
+              </Button>
+            ))}
+          </div>
+        </div>
 
-				{/* Navigation Links - Center */}
-				<div className="hidden lg:flex items-center justify-center col-span-6">
-				<div className="flex justify-center w-full space-x-4 md:space-x-8">
-					{menuItems.map((item, idx) => (
-					<Button
-						asChild
-						size="sm"
-						variant="ghost"
-						key={item.name}
-						className={cn(
-						"rounded-full font-semibold transition-all duration-300 px-2 md:px-3 py-1 text-ellipsis overflow-hidden whitespace-nowrap",
-						isScrolled ? "text-xs" : "text-sm"
-						)}
-					>
-						<Link to={item.href} className="truncate overflow-hidden text-center">{item.name}</Link>
-					</Button>
-					))}
-				</div>
-				</div>
+        {/* Right side */}
+        <div className="flex items-center justify-end col-span-6 sm:col-span-4 md:col-span-3">
+          <div className="hidden sm:flex items-center justify-end space-x-2">
+            <Button
+              asChild
+              size="lg"
+              className={cn(
+                "rounded-full font-semibold border-gray-300 px-[30%] py-[3.5%]",
+                isScrolled ? "text-xs" : "text-sm"
+              )}
+            >
+              <Link to="/login">Login</Link>
+            </Button>
+          </div>
 
-				{/* Right side buttons */}
-				<div className="flex items-center justify-end col-span-6 sm:col-span-4 md:col-span-3">
-					<div className={cn(
-						"hidden sm:flex items-center justify-end space-x-2 md:space-x-4"
-					)}>
-						<Button asChild variant="outline" size="sm" className={cn(
-							"rounded-full font-semibold transition-all duration-300 px-2 md:px-3 py-1 border-gray-300",
-							isScrolled ? "text-xs" : "text-sm"
-						)}>
-							<Link to="/login" className="truncate text-center">Login</Link>
-						</Button>
-						<Button asChild size="sm" className={cn(
-							"rounded-full font-semibold transition-all duration-300 px-2 md:px-3 py-1 bg-orange-500 hover:bg-orange-600",
-							isScrolled ? "text-xs" : "text-sm"
-						)}>
-							<Link to="/pre-access" className="truncate text-center">Pre Access</Link> 
-						</Button>
-					</div>
-					{/* Mobile menu button */}
-					<button
-						onClick={toggleMobileMenu}
-						className={cn(
-							"inline-flex items-center justify-center rounded-full transition-all duration-300 text-gray-700 hover:bg-white/30 hover:backdrop-blur-md lg:hidden ml-2",
-							isScrolled ? "p-1" : "p-2"
-						)}
-						aria-expanded="false"
-					>
-						<span className="sr-only">Open main menu</span>
-						{isMobileMenuOpen ? (
-							<X className={isScrolled ? "h-5 w-5" : "h-6 w-6"} aria-hidden="true" />
-						) : (
-							<Menu className={isScrolled ? "h-5 w-5" : "h-6 w-6"} aria-hidden="true" />
-						)}
-					</button>
-				</div>
-			</div>
+          {/* Mobile menu button */}
+          <button
+            onClick={toggleMobileMenu}
+            className={cn(
+              "inline-flex items-center justify-center rounded-full transition-all duration-300 text-gray-700 hover:bg-white/30 hover:backdrop-blur-md lg:hidden ml-[2%]",
+              isScrolled ? "p-[0.4rem]" : "p-[0.6rem]"
+            )}
+          >
+            {isMobileMenuOpen ? (
+              <X className={isScrolled ? "h-[1.25rem] w-[1.25rem]" : "h-[1.5rem] w-[1.5rem]"} />
+            ) : (
+              <Menu className={isScrolled ? "h-[1.25rem] w-[1.25rem]" : "h-[1.5rem] w-[1.5rem]"} />
+            )}
+          </button>
+        </div>
+      </div>
 
-			{/* Mobile menu */}
-			<AnimatePresence>
-				{isMobileMenuOpen && (
-					<motion.div
-						initial={{ height: 0, opacity: 0 }}
-						animate={{ height: "auto", opacity: 1 }}
-						exit={{ height: 0, opacity: 0 }}
-						transition={{ duration: 0.3 }}
-						className="lg:hidden absolute top-full left-0 right-0 mt-2 bg-white/90 backdrop-blur-xl rounded-2xl shadow-lg overflow-hidden w-full max-w-xs mx-auto"
-					>
-						<div className="space-y-1 px-2 sm:px-4 pb-5 pt-2">
-							{menuItems.map((item, index) => (
-								<div key={index} className="py-2">
-									<Link
-										to={item.href}
-										className="flex w-full items-center justify-between rounded-md py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-blue-600"
-									>
-										<span>{item.name}</span>
-									</Link>
-								</div>
-							))}
-							<div className="mt-4 flex flex-col space-y-2">
-								<Button asChild variant="outline" size="sm" className="rounded-md hover:bg-gray-100/80">
-									<Link to="/login">Login</Link>
-								</Button>
-								<Button asChild size="sm" className="rounded-md bg-orange-500 hover:bg-orange-600">
-									<Link to="/pre-access">Pre Access</Link>
-								</Button>
-							</div>
-						</div>
-					</motion.div>
-				)}
-			</AnimatePresence>
-		</nav>
-	);
+      {/* Mobile menu */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="lg:hidden absolute top-full left-0 right-0 mt-[1%] bg-white/90 backdrop-blur-xl rounded-2xl shadow-lg overflow-hidden w-[90%] max-w-[400px] mx-auto"
+          >
+            <div className="space-y-[2%] px-[5%] pb-[5%] pt-[2%]">
+              {menuItems.map((item, index) => (
+                <div key={index} className="py-[2%]">
+                  <Link
+                    to={item.href}
+                    className="flex w-full items-center justify-between rounded-md py-[2%] text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-blue-600"
+                  >
+                    <span>{item.name}</span>
+                  </Link>
+                </div>
+              ))}
+              <div className="mt-[4%] flex flex-col space-y-[2%]">
+                <Button asChild variant="outline" size="sm" className="rounded-md hover:bg-gray-100/80">
+                  <Link to="/login">Login</Link>
+                </Button>
+                <Button asChild size="sm" className="rounded-md bg-orange-500 hover:bg-orange-600">
+                  <Link to="/pre-access">Pre Access</Link>
+                </Button>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </nav>
+  )
 }

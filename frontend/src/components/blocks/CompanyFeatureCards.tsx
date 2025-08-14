@@ -111,12 +111,12 @@ export function CompanyFeaturesCards() {
       <h1 className="text-5xl font-bold text-gray-900 text-center mb-4 leading-tight">
         Why Choose Zordie AI
       </h1>
-      <p className="text-lg text-gray-600 text-center mb-12 max-w-xl">
+      <p className="text-lg text-gray-600 text-center mb-12 max-w-[30%]">
         Empowering businesses with seamless customer management and actionable insights.
       </p>
 
       {/* Intro */}
-      <div className="w-full max-w-[1500px] mx-auto mb-16">
+      <div className="w-full max-w-[90%] mx-auto mb-16">
         <div className="flex items-center gap-2 mb-4">
           <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-gray-700 font-medium text-sm">
             <span className="text-xs font-semibold">★</span>Features
@@ -135,7 +135,7 @@ export function CompanyFeaturesCards() {
       </div>
 
       {/* Feature Cards */}
-      <div className="w-full max-w-[1500px] flex flex-col gap-12">
+      <div className="w-full max-w-[90%] flex flex-col gap-12">
         {features.map((feature, idx) => (
           <AnimatedCard key={feature.title}>
             <div className="flex flex-col md:flex-row items-center bg-white rounded-3xl overflow-hidden">

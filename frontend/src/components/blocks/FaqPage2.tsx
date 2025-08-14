@@ -56,7 +56,7 @@ export default function FaqPage2({
         {heading}
       </h1>
       {/* FAQ List */}
-      <div className="max-w-3xl w-full mx-auto space-y-4">
+      <div className="max-w-[90%] w-full mx-auto space-y-4">
         {faqs.map((faq, idx) => {
           const isOpen = openIndexes.has(idx);
           return (
@@ -92,7 +92,7 @@ export default function FaqPage2({
       {/* Hero Banner Card at the End */}
       <div className="w-full flex justify-center mt-12 sm:mt-16">
         <div
-          className="w-full max-w-[1500px] min-h-[320px] sm:min-h-[380px] rounded-[16px] sm:rounded-[24px] flex flex-col md:flex-row items-center justify-center relative overflow-hidden"
+          className="w-full max-w-[90%] min-h-[320px] sm:min-h-[380px] rounded-[16px] sm:rounded-[24px] flex flex-col md:flex-row items-center justify-center relative overflow-hidden"
           style={{
             background: banner.background ? undefined : undefined,
           }}

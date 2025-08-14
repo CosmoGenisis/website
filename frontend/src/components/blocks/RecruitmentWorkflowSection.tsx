@@ -32,7 +32,7 @@ export function RecruitmentWorkflowSection({
 }: RecruitmentWorkflowSectionProps) {
   return (
     <section className="w-full py-16 px-4 bg-white">
-      <div className="max-w-[1400px] mx-auto">
+      <div className="max-w-[90%] mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -65,7 +65,7 @@ export function RecruitmentWorkflowSection({
                 <img
                   src={step.image}
                   alt={step.imageAlt || "Workflow step"}
-                  className="w-full max-w-xl max-h-[500px] rounded-2xl shadow-lg object-top overflow-hidden"
+                  className="w-full max-w-[80%] max-h-[80%] rounded-2xl shadow-lg object-top overflow-hidden"
                   draggable={false}
                 />
               </div>
@@ -91,7 +91,7 @@ export function RecruitmentWorkflowSection({
               <img
                 src={bigCard.image}
                 alt={bigCard.imageAlt || "Workflow"}
-                className="w-full max-w-full rounded-2xl shadow-lg object-cover"
+                className="w-full max-w-[90%] rounded-2xl shadow-lg object-cover"
                 draggable={false}
               />
             </div>

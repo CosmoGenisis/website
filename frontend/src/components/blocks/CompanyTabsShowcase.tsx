@@ -28,7 +28,7 @@ export function CompanyTabsShowcase({
   return (
     <div className="w-full flex justify-center py-12">
       <div
-        className="relative w-full max-w-[1600px] rounded-[32px] overflow-hidden"
+        className="relative w-full max-w-[90%] rounded-[32px] overflow-hidden"
         style={{
           background: `url(${backgroundImage}) center/cover no-repeat`,
         }}

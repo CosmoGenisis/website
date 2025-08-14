@@ -14,7 +14,7 @@ export default function WhyZordie() {
   return (
     <div className="min-h-screen bg-white flex flex-col items-center justify-center px-6 py-20">
       {/* Top Section */}
-      <div className="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+      <div className="max-w-[90%] w-full grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
         {/* Left Side */}
         <div>
           <div className="mb-6">
@@ -68,8 +68,8 @@ export default function WhyZordie() {
 {/* Integrations Section */}
 <section className="w-full flex flex-col items-center justify-center py-8">
   <span className="px-6 py-2 rounded-full bg-blue-600 text-white text-2xl font-medium mb-4">Integrations</span>
-  <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Integrate wherever you want</h2>
-  <p className="text-gray-600 text-center max-w-xl mb-10">
+  <h2 className="text-4xl md:text-6xl font-bold text-center mb-4">Integrate wherever you want</h2>
+  <p className="text-gray-600 text-center max-w-[40%] mb-10">
     Connect effortlessly with popular apps, expanding functionality and enabling smooth workflows between tools you already use.
   </p>
   <div className="relative flex items-center justify-center" style={{ height: 420, width: 420 }}>

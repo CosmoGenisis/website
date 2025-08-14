@@ -31,9 +31,9 @@ export function FeaturesImpactSection({
       style={{ background: backgroundGradient }}
     >
       <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">{heading}</h2>
-      <p className="text-lg text-gray-700 text-center mb-12 max-w-2xl">{subheading}</p>
+      <p className="text-lg text-gray-700 text-center mb-12 max-w-[40%]">{subheading}</p>
       {/* Top 3 Cards */}
-      <div className="w-full max-w-[1400px] grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+      <div className="w-full max-w-[90%] grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
         {topFeatures.map((feature, idx) => (
           <motion.div
             key={feature.title}
@@ -56,7 +56,7 @@ export function FeaturesImpactSection({
         ))}
       </div>
       {/* Middle 2 Cards */}
-      <div className="w-full max-w-[1400px] grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+      <div className="w-full max-w-[90%] grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
         {middleFeatures.map((feature, idx) => (
           <motion.div
             key={feature.title}
@@ -84,7 +84,7 @@ export function FeaturesImpactSection({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.7, delay: 0.3 }}
-        className="w-full max-w-[1400px] bg-white rounded-3xl shadow-2xl p-12 flex flex-col md:flex-row items-center gap-8"
+        className="w-full max-w-[90%] bg-white rounded-3xl shadow-2xl p-12 flex flex-col md:flex-row items-center gap-8"
       >
         <div className="flex-1 flex flex-col gap-4">
           <div className="mb-2">{bigFeature.icon}</div>
@@ -95,7 +95,7 @@ export function FeaturesImpactSection({
           <img
             src={bigFeature.image}
             alt={bigFeature.title}
-            className="w-full max-w-md h-64 object-cover object-top rounded-xl"
+            className="w-full max-w-[80%] h-64 object-cover object-top rounded-xl"
             draggable={false}
           />
         </div>

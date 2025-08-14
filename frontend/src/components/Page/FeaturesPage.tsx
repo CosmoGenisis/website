@@ -73,7 +73,7 @@ export function FeaturesPage() {
         peopleImages={[
           { src: user1, alt: "User 1" },
           { src: user2, alt: "User 2" },
-        ]}
+        ]} 
       />
 
       <PrimeFeaturesHero

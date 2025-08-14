@@ -70,7 +70,7 @@ export default function WhyRecruitersLoveUs() {
   return (
     <div className="min-h-screen bg-white flex flex-col items-center px-6 py-20">
       {/* First Card: Content left, video right */}
-      <div className="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-24">
+      <div className="max-w-[90%] w-full grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-24">
         <div>
           <h1 className="text-5xl font-bold text-gray-900 mb-10">Why recruiters love us</h1>
           <ul className="space-y-8 mb-12">
@@ -104,7 +104,7 @@ export default function WhyRecruitersLoveUs() {
       </div>
 
       {/* Second Card: Video left, content right */}
-      <div className="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+      <div className="max-w-[90%] w-full grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
         <div className="flex items-center justify-center">
           <video
             src={vid2}
@@ -138,7 +138,7 @@ export default function WhyRecruitersLoveUs() {
       </div>
       {/* Animated Stats Section */}
       <div className="w-full py-16 bg-white">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+        <div className="max-w-[90%] mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           <AnimatedStat value={25} suffix="K+" label="Happy Users" />
           <AnimatedStat value={100} suffix="%" label="Users Satisfaction" />
           <AnimatedStat value={10} suffix="K+" label="Jobs Landed" />

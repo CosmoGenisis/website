@@ -24,7 +24,7 @@ export function UserTestimonialSection({
 
   return (
     <section className="w-full py-16 px-2 sm:px-6 bg-white">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-[90%] mx-auto">
         <h2 className="text-3xl sm:text-5xl font-bold text-center mb-12">{heading}</h2>
         <div className="flex flex-col md:flex-row bg-[#0b2232] rounded-3xl overflow-hidden shadow-xl relative">
           {/* Decorative shape */}

@@ -52,7 +52,7 @@ export function PrimeFeaturesHero({
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.2 }}
-        className="text-base md:text-lg text-gray-700 mb-16 text-center max-w-xl"
+        className="text-base md:text-lg text-gray-700 mb-16 text-center max-w-[40%]"
       >
         {subtitle}
       </motion.p>
@@ -66,7 +66,7 @@ export function PrimeFeaturesHero({
             transition={{ duration: 0.7, delay: 0.3 }}
             className="flex justify-center"
           >
-            <div className="bg-white rounded-xl shadow-lg p-6 text-center text-gray-800 font-medium w-full max-w-xs">
+            <div className="bg-white rounded-xl shadow-lg p-6 text-center text-gray-800 font-medium w-full max-w-[55%]">
               {features[0].text}
             </div>
           </motion.div>
@@ -76,7 +76,7 @@ export function PrimeFeaturesHero({
             transition={{ duration: 0.7, delay: 0.4 }}
             className="flex justify-center"
           >
-            <div className="bg-white rounded-xl shadow-lg p-6 text-center text-gray-800 font-medium w-full max-w-xs">
+            <div className="bg-white rounded-xl shadow-lg p-6 text-center text-gray-800 font-medium w-full max-w-[55%]">
               {features[1].text}
             </div>
           </motion.div>
@@ -115,7 +115,7 @@ export function PrimeFeaturesHero({
             transition={{ duration: 0.7, delay: 0.8 }}
             className="flex justify-center"
           >
-            <div className="bg-white rounded-xl shadow-lg p-6 text-center text-gray-800 font-medium w-full max-w-xs">
+            <div className="bg-white rounded-xl shadow-lg p-6 text-center text-gray-800 font-medium w-full max-w-[55%]">
               {features[2].text}
             </div>
           </motion.div>
@@ -125,7 +125,7 @@ export function PrimeFeaturesHero({
             transition={{ duration: 0.7, delay: 0.9 }}
             className="flex justify-center"
           >
-            <div className="bg-white rounded-xl shadow-lg p-6 text-center text-gray-800 font-medium w-full max-w-xs">
+            <div className="bg-white rounded-xl shadow-lg p-6 text-center text-gray-800 font-medium w-full max-w-[55%]">
               {features[3].text}
             </div>
           </motion.div>

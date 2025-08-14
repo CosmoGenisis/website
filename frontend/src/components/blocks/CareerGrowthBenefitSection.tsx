@@ -37,11 +37,11 @@ export function CareerGrowthBenefitSection({
 
   return (
     <section className="w-full bg-white py-12 px-2 sm:px-6">
-      <div className="max-w-[1500px] mx-auto flex flex-col items-center">
+      <div className="max-w-[90%] mx-auto flex flex-col items-center">
         {/* Heading */}
         <h2 className="text-4xl sm:text-6xl font-bold text-center mb-4">{heading}</h2>
         {subheading && (
-          <p className="text-lg sm:text-xl text-gray-500 text-center mb-12 max-w-2xl">
+          <p className="text-lg sm:text-xl text-gray-500 text-center mb-12 max-w-[50%]">
             {subheading}
           </p>
         )}
@@ -63,7 +63,7 @@ export function CareerGrowthBenefitSection({
             </div>
           </div>
           {/* Right: Image with scroll animation */}
-          <div className="flex-1 flex items-center justify-center w-full max-w-3xl p-4">
+          <div className="flex-1 flex items-center justify-center w-full max-w-[80%] p-4">
             <motion.div
                 style={{ scale, y }}
                 className="w-full rounded-2xl overflow-hidden border-[6px] border-black shadow relative"

@@ -66,7 +66,7 @@ export default function FaqPage() {
         Real stories from teams who streamlined their workflow and delivered more with less.
       </div>
       {/* FAQ List */}
-      <div className="max-w-5xl w-full mx-auto space-y-4">
+      <div className="max-w-[90%] w-full mx-auto space-y-4">
         {faqs.map((faq, idx) => {
           const isOpen = openIndexes.has(idx);
           return (

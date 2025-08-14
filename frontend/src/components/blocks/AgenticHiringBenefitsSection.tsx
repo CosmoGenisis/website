@@ -28,7 +28,7 @@ export function AgenticHiringBenefitsSection({
 
   return (
     <section className="w-full py-16 px-4 bg-white">
-      <div className="max-w-[1400px] mx-auto">
+      <div className="max-w-[90%] mx-auto">
         {badge && (
           <motion.div
             initial={{ opacity: 0, y: -10 }}
@@ -93,7 +93,7 @@ export function AgenticHiringBenefitsSection({
             <img
               src={benefits[activeIdx].image}
               alt={benefits[activeIdx].imageAlt || dashboardAlt}
-              className="w-full max-w-2xl rounded-2xl shadow-xl object-cover"
+              className="w-full max-w-[90%] rounded-2xl shadow-xl object-cover"
               draggable={false}
             />
           </motion.div>

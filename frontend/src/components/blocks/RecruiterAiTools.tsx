@@ -29,7 +29,7 @@ export default function RecruiterAiTools({
       className="min-h-screen w-full flex flex-col items-center px-6 py-20"
       style={{ background }}
     >
-      <div className="max-w-7xl w-full mx-auto">
+      <div className="max-w-[90%] w-full mx-auto">
         {/* Badge */}
         <div className="mb-6">
           <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 text-gray-700 font-medium shadow">

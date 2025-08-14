@@ -68,7 +68,7 @@ const TestimonialCard = ({
   return (
     <Card
       {...(href ? { href } : {})}
-      className={`flex flex-col rounded-lg border-t bg-gradient-to-b from-card/80 to-card/40 backdrop-blur-sm p-4 text-start sm:p-6 hover:from-card/90 hover:to-card/50 max-w-[320px] sm:max-w-[320px] transition-all duration-300 border-border/50 ${className || ""}`}
+      className={`flex flex-col rounded-lg border-t bg-gradient-to-b from-card/80 to-card/40 backdrop-blur-sm p-4 text-start sm:p-6 hover:from-card/90 hover:to-card/50 max-w-[90%] sm:max-w-[90%] transition-all duration-300 border-border/50 ${className || ""}`}
     >
       <div className="flex items-center gap-3">
         <Avatar className="h-12 w-12 border-2 border-primary/20">
@@ -219,7 +219,7 @@ export function AnimatedTestimonialsWithParticles() {
       <div className="absolute inset-0">
         <FloatingParticles count={15} />
       </div>
-      <div className="relative z-10 max-w-6xl mx-auto px-9 flex flex-col items-center justify-center">
+      <div className="relative z-10 max-w-[80%] mx-auto px-9 flex flex-col items-center justify-center">
         <div className="text-center mb-12">
           <span className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-card/50 border border-border backdrop-blur-sm mb-6">
             <span className="text-sm font-medium text-muted-foreground">✨ Testimonials</span>

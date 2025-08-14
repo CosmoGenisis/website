@@ -25,7 +25,7 @@ export function AgentsIntegrationDiagram() {
         Empowering <span className="text-black-600">Autonomous</span><br />
         AI Agents To Work Together
       </h1>
-      <p className="text-lg md:text-xl text-gray-600 text-center mb-12 max-w-2xl">
+      <p className="text-lg md:text-xl text-gray-600 text-center mb-12 max-w-[50%]">
         Connect effortlessly with agents, recruiters, and candidates – enabling smooth collaboration and streamlined workflows across your hiring process.
       </p>
       {/* Bottom Features */}

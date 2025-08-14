@@ -21,7 +21,7 @@ import HRAgentsDashboard from '../blocks/Hragents'
 import AIBenefitsLanding from '../blocks/AiBenefits'
 import Trial from '../blocks/Trial'
 import FeatureBentoGrid from '../blocks/FeatureBentoGrid'
-import Zordifeatures from '../ui/ZordieFeatures3'
+import Zordifeatures from '../ui/ZordieFeatures3' 
 import ZordiFeatures from '../ui/ZordieFeatures4'
 import RecruiterAiTools from '../blocks/RecruiterAiTools'
 import UserTestimonials from '../blocks/UserTestimonials'
@@ -59,7 +59,7 @@ export const LandingPage=()=>{
             backgroundImage={imgBg}
             dashboardImage={imgDash}
             />
-            <div className=" mb-24">
+            <div className=" mb-24"> 
             <Zordifeatures />
             </div>
             <ZordiFeatures />

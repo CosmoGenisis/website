@@ -31,10 +31,10 @@ export function WhyZordieWorks({
 
   return (
     <section className="min-h-screen w-full bg-white flex items-center justify-center py-8 px-2 sm:px-6">
-      <div className="w-full max-w-[1500px] mx-auto bg-white rounded-3xl p-4 sm:p-8 flex flex-col md:flex-row gap-8 md:gap-12 items-center">
+      <div className="w-full max-w-[90%] mx-auto bg-white rounded-3xl p-4 sm:p-8 flex flex-col md:flex-row gap-8 md:gap-12 items-center">
         {/* Left: Image */}
         <div className="flex-1 flex items-center justify-center">
-          <div className="w-full max-w-[620px] aspect-square rounded-2xl overflow-hidden bg-[#f3fbff] flex items-center justify-center shadow">
+          <div className="w-full max-w-[70%] aspect-square rounded-2xl overflow-hidden bg-[#f3fbff] flex items-center justify-center shadow">
             <img
               src={image}
               alt="Why Zordie Works"
@@ -44,7 +44,7 @@ export function WhyZordieWorks({
           </div>
         </div>
         {/* Right: Content */}
-        <div className="flex-1 flex flex-col items-start justify-center w-full max-w-xl">
+        <div className="flex-1 flex flex-col items-start justify-center w-full max-w-[70%]">
           <span className="inline-flex items-center px-4 py-2 mb-4 rounded-full bg-gray-100 text-gray-700 font-medium shadow text-sm">
             {badge}
           </span>

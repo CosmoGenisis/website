@@ -46,7 +46,7 @@ export function CandidateFeaturesShowcase({
 }: CandidateFeaturesShowcaseProps) {
   return (
     <section className="min-h-screen w-full bg-[#f3fbff] py-12 px-2 sm:px-6 flex flex-col items-center justify-center">
-      <div className="max-w-[1600px] w-full mx-auto">
+      <div className="max-w-[90%] w-full mx-auto">
         {/* Top badge */}
         <div className="flex justify-center mb-6">
           <span className="inline-flex items-center px-4 py-2 gap-2 rounded-full bg-white text-gray-700 font-medium shadow text-sm">
@@ -68,7 +68,7 @@ export function CandidateFeaturesShowcase({
             <h2 className="text-2xl sm:text-5xl font-bold mb-8 text-gray-900">
               Powerful Features to<br />Accelerate Your Job Search
             </h2>
-            <p className="text-gray-500 text-base sm:text-xl mb-8 max-w-xl">
+            <p className="text-gray-500 text-base sm:text-xl mb-8 max-w-[85%]">
               {subheading}
             </p>
             <div className="bg-white rounded-xl  divide-y divide-gray-100">
@@ -89,7 +89,7 @@ export function CandidateFeaturesShowcase({
           </div>
           {/* Right: Video */}
           <div className="flex items-center justify-center ">
-            <div className="w-full max-w-[590px] aspect-[4/5] rounded-2xl overflow-hidden shadow-lg bg-gray-100 flex items-center justify-center">
+            <div className="w-full max-w-[75%] aspect-[4/5] rounded-2xl overflow-hidden shadow-lg bg-gray-100 flex items-center justify-center">
               <video
                 src={videoSrc}
                 autoPlay
@@ -106,14 +106,14 @@ export function CandidateFeaturesShowcase({
         {/* Career Card Section */}
 {careerCard && (
   <div className="w-full flex flex-col items-center mt-16">
-    <div className="w-full max-w-[1500px] rounded-3xl bg-white shadow-xl p-4 overflow-hidden border-4 border-white">
+    <div className="w-full max-w-[90%] rounded-3xl bg-white shadow-xl p-4 overflow-hidden border-4 border-white">
       <div className="flex flex-col md:flex-row items-stretch rounded-3xl overflow-hidden">
         {/* Left: Image */}
         <div className="flex-1 flex items-center justify-center bg-[#05203c] p-8">
           <img
             src={careerCard.image}
             alt={careerCard.title}
-            className="rounded-xl object-cover w-full max-w-[540px] h-[540px] md:h-[540px] shadow-lg"
+            className="rounded-xl object-cover w-full max-w-[80%] h-[540px] md:h-[540px] shadow-lg"
           />
         </div>
         {/* Right: Content */}
