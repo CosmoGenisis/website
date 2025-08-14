@@ -37,7 +37,7 @@ import {FeaturesImpactSection} from "@/components/blocks/FeaturesImpactSection";
 import dashboardImg from '@/images/Features_1.png';
 import bgImg from '@/images/Hero_section.png';
 import user1 from '@/images/Avatar_2.png';
-import user2 from '@/images/Avatar.png';
+import user2 from '@/images/avatar.png';
 import primeLogo from "@/images/logo.png";
 import screeningImg from "@/images/logo.png";
 import interviewerImg from "@/images/logo.png";
