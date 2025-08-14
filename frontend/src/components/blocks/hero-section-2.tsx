@@ -1,178 +1,123 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import dash from '@/components/blocks/Dashboard.png'
-import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { AnimatedGroup } from '@/components/ui/animated-group'
-import { cn } from '@/lib/utils'
-import { InfiniteSlider } from '../ui/infinite-slider'
-import { ProgressiveBlur } from '../ui/progressive-blur'
-import { MovingBorderDemo } from '@/demo/MovingOrderDemo'
-import Navbar from '../ui/nav'
-import ScrollAnimationDemo from '../ui/CSD'
-import { ArrowRight } from 'lucide-react'
-import {AnimatedHeroBackground} from './AnimatedHeroBackground'
-import img from '@/images/Background.png'
-import img1 from '@/images/Home.png'
-import img2 from '@/images/People_8.png'
-import img3 from '@/images/People_2.png'
-import img4 from '@/images/People_3.png'
+import React from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import Navbar from '../ui/nav';
 
-// Import framer-motion for scroll animation
-import { motion, useScroll, useTransform } from "framer-motion"
-
-const transitionVariants = {
-    item: {
-        hidden: {
-            opacity: 0,
-            filter: 'blur(12px)',
-            y: 12,
-        },
-        visible: {
-            opacity: 1,
-            filter: 'blur(0px)',
-            y: 0,
-            transition: {
-                type: 'spring' as const,
-                bounce: 0.3,
-                duration: 1.5,
-            },
-        },
-    },
+interface HeroSectionProps {
+  badge: React.ReactNode;
+  title: React.ReactNode;
+  subtitle: React.ReactNode;
+  buttons: Array<{ label: string; href: string; variant?: "primary" | "outline" }>;
+  avatars: Array<{ src: string; alt: string }>;
+  trustedText?: React.ReactNode;
+  backgroundImage: string;
+  dashboardImage: string;
 }
 
-export function HeroSection() {
-    // Ref for scroll animation
-    const ref = React.useRef<HTMLDivElement>(null)
-    const { scrollYProgress } = useScroll({
-        target: ref,
-        offset: ["start end", "end start"]
-    })
+export function HeroSection({
+  badge,
+  title,
+  subtitle,
+  buttons,
+  avatars,
+  trustedText = "Trusted already by 10k+",
+  backgroundImage,
+  dashboardImage,
+}: HeroSectionProps) {
+  const ref = React.useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
 
-    // Animate vertical position and scale (width) of dashboard image
-    const y = useTransform(scrollYProgress, [0, 1], [120, 0]) // move up as you scroll
-    const scaleX = useTransform(scrollYProgress, [0, 1], [0.85, 1.1]) // increase width
+  const y = useTransform(scrollYProgress, [0, 1], [120, 0]);
+  const scaleX = useTransform(scrollYProgress, [0, 1], [0.85, 1.1]);
 
-    return (
-        <>
-            <HeroHeader />
-            <main className="overflow-hidden">
-                <section className="p-0 m-0">
-                    <div ref={ref} className="relative w-full flex flex-col items-center justify-start p-0 m-0 bg-transparent">
-                        {/* Gradient background */}
-                        <div
-                            className="absolute inset-0 w-full h-full z-0 bg-no-repeat bg-cover bg-center"
-                            style={{
-                                backgroundImage: `url(${img})`,
-                            }}
-                        />
-                        <div className="mx-auto max-w-5xl px-6 w-full z-10 relative">
-                            <div className="sm:mx-auto lg:mr-auto flex flex-col items-center text-center">
-                                <div className="mt-24 mb-6">
-                                    <span className="inline-block px-6 py-2 rounded-full bg-white/80 text-gray-900 text-lg font-medium shadow border border-gray-200">
-                                        Next-Gen Hiring
-                                    </span>
-                                </div>
-                                <AnimatedGroup
-                                    variants={{
-                                        container: {
-                                            visible: {
-                                                transition: {
-                                                    staggerChildren: 0.05,
-                                                    delayChildren: 0.75,
-                                                },
-                                            },
-                                        },
-                                        ...transitionVariants,
-                                    }}
-                                >
-                                    <h1
-                                        className="max-w-4xl text-balance font-black mt-2 mb-2"
-                                        style={{
-                                            fontSize: '4rem', // ~80px
-                                            lineHeight: '1.1',
-                                            color: '#18181B', // near black
-                                            letterSpacing: '-0.03em',
-                                        }}
-                                    >
-                                        The First Autonomous<br />Hiring Platform
-                                    </h1>
-                                    <p
-                                        className="mt-4 max-w-4xl text-pretty"
-                                        style={{
-                                            fontSize: '1.5rem', // ~24px
-                                            color: '#444',
-                                            fontWeight: 400,
-                                        }}
-                                    >
-                                        Streamline your entire recruitment workflow—from job posting to final hire—with advanced AI-driven precision.
-                                    </p>
-                                    <div className="flex items-center gap-4 justify-center mt-10">
-                                        <Button
-                                            asChild
-                                            size="lg"
-                                            className="rounded-full px-8 py-4 text-lg font-semibold bg-black text-white hover:bg-gray-900 transition"
-                                        >
-                                            <Link to="#">
-                                                <span className="text-nowrap">Start Free Trial</span>
-                                                <ArrowRight className="ml-2 h-5 w-5" />
-                                            </Link>
-                                        </Button>
-                                        <Button
-                                            asChild
-                                            size="lg"
-                                            variant="outline"
-                                            className="rounded-full px-8 py-4 text-lg font-semibold bg-white text-black border border-gray-200 hover:bg-gray-100 transition"
-                                        >
-                                            <Link to="#">
-                                                <span className="text-nowrap">Get Early Access</span>
-                                            </Link>
-                                        </Button>
-                                    </div>
-                                    {/* Trusted by avatars and text */}
-                                    <div className="flex items-center justify-center mt-10">
-                                        <div className="flex -space-x-4">
-                                            <img src={img2} alt="avatar" className="w-12 h-12 rounded-full border-2 border-white" />
-                                            <img src={img3} alt="avatar" className="w-12 h-12 rounded-full border-2 border-white" />
-                                            <img src={img4} alt="avatar" className="w-12 h-12 rounded-full border-2 border-white" />
-                                        </div>
-                                        <span className="ml-4 text-lg text-gray-600 font-medium">Trusted already by 10k+</span>
-                                    </div>
-                                </AnimatedGroup>
-                            </div>
-                        </div>
-                        {/* Animated dashboard image */}
-                        <motion.div
-                            style={{
-                                y,
-                                scaleX,
-                            }}
-                            className="w-full flex justify-center mt-36 overflow-visible"
-                        >
-                            <img
-                                src={img1}
-                                alt="Hero"
-                                className="w-full max-w-5xl h-full object-cover rounded-2xl shadow-xl"
-                                draggable={false}
-                                style={{ objectPosition: 'top' }}
-                            />
-                        </motion.div>
-                    </div>
-                </section>
-            </main>
-        </>
-    )
+  return (
+    <>
+    <HeroHeader />
+    <main className="overflow-hidden">
+      <section className="p-0 m-0">
+        <div ref={ref} className="relative w-full flex flex-col items-center justify-start p-0 m-0 bg-transparent">
+          {/* Responsive Gradient/Background */}
+          <div
+            className="absolute inset-0 w-full h-full z-0 bg-no-repeat bg-cover bg-center"
+            style={{ backgroundImage: `url(${backgroundImage})` }}
+          />
+          <div className="mx-auto max-w-5xl px-6 w-full z-10 relative">
+            <div className="sm:mx-auto lg:mr-auto flex flex-col items-center text-center">
+              <div className="mt-24 mb-6">
+                <span className="inline-block px-6 py-2 rounded-full bg-white/80 text-gray-900 text-lg font-medium shadow border border-gray-200">
+                  {badge}
+                </span>
+              </div>
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7 }}
+                className="max-w-4xl font-black mt-2 mb-2 text-3xl md:text-6xl leading-tight text-gray-900"
+              >
+                {title}
+              </motion.h1>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, delay: 0.1 }}
+                className="mt-4 max-w-3xl text-lg md:text-2xl text-gray-700 font-normal"
+              >
+                {subtitle}
+              </motion.p>
+              <div className="flex flex-col sm:flex-row items-center gap-4 justify-center mt-10">
+                {buttons.map((btn, i) => (
+                  <a
+                    key={btn.label}
+                    href={btn.href}
+                    className={`rounded-full px-8 py-4 text-lg font-semibold transition ${
+                      btn.variant === "outline"
+                        ? "bg-white text-black border border-gray-200 hover:bg-gray-100"
+                        : "bg-black text-white hover:bg-gray-900"
+                    }`}
+                  >
+                    {btn.label}
+                  </a>
+                ))}
+              </div>
+              {/* Trusted by avatars and text */}
+              <div className="flex items-center justify-center mt-10">
+                <div className="flex -space-x-4">
+                  {avatars.map((a, i) => (
+                    <img
+                      key={i}
+                      src={a.src}
+                      alt={a.alt}
+                      className="w-12 h-12 rounded-full border-2 border-white"
+                    />
+                  ))}
+                </div>
+                <span className="ml-4 text-lg text-gray-600 font-medium">{trustedText}</span>
+              </div>
+            </div>
+          </div>
+          {/* Animated dashboard image */}
+          <motion.div
+            style={{ y, scaleX }}
+            className="w-full flex justify-center mt-24 md:mt-36 overflow-visible"
+          >
+            <img
+              src={dashboardImage}
+              alt="Dashboard"
+              className="w-full max-w-5xl h-full object-cover rounded-2xl shadow-xl"
+              draggable={false}
+              style={{ objectPosition: "top" }}
+            />
+          </motion.div>
+        </div>
+      </section>
+    </main>
+    </>
+  );
 }
-
-const menuItems = [
-    { name: 'Features', href: '#link' },
-    { name: 'Solution', href: '#link' },
-    { name: 'Pricing', href: '#link' },
-    { name: 'About', href: '#link' },
-    { name: 'For Companies', href: '#link' },
-]
 
 export const HeroHeader = () => {
     const [menuState, setMenuState] = React.useState(false)
