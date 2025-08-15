@@ -29,71 +29,88 @@ export function SolutionHero({
   orbFeatures = [],
 }: SolutionHeroProps) {
   return (
-    <section className="w-full min-h-[600px] flex flex-col md:flex-row items-center justify-between px-4 sm:px-28 py-32 bg-white">
+    <section className="w-full min-h-[80vh] flex flex-col md:flex-row items-center justify-between px-[10vh] py-[12vh] bg-white">
       {/* Left: Text */}
-      <div className="flex-1 flex flex-col justify-center items-start max-w-[60%]">
-        <h1 className="text-4xl sm:text-6xl font-bold text-gray-900 mb-6 leading-tight">{heading}</h1>
-        <p className="text-lg sm:text-xl text-gray-600 mb-8">{subheading}</p>
+      <div className="flex-1 flex flex-col justify-center items-start md:pr-[4%] max-w-full">
+        <h1 className="text-gray-900 font-bold leading-tight mb-[2vh] text-[clamp(2rem,4vw,3.5rem)]">
+          {heading}
+        </h1>
+        <p className="text-gray-600 mb-[4vh] text-[clamp(1rem,1.6vw,1.25rem)]">
+          {subheading}
+        </p>
+
         {/* Customers */}
-        <div className="flex items-center gap-4 mt-2">
-          <div className="flex -space-x-4">
+        <div className="flex items-center gap-[1vw]">
+          <div className="flex -space-x-[1vw]">
             {customers.map((c, i) => (
               <img
                 key={i}
                 src={c.avatar}
-                alt={c.name}
-                className="w-12 h-12 rounded-full border-2 border-white object-cover shadow"
-                style={{ zIndex: 10 - i }}
+                alt={c.name || `Customer ${i + 1}`}
+                className="w-[8vh] h-[8vh] rounded-full border-2 border-white object-cover shadow"
+                style={{ zIndex: customers.length - i }}
                 draggable={false}
               />
             ))}
           </div>
-          <span className="text-lg font-semibold text-gray-900">{customerCount}</span>
-          <span className="text-gray-500 text-base ml-2">Happy Customers</span>
+          <span className="text-gray-900 font-semibold text-[clamp(1rem,1.6vw,1.25rem)]">
+            {customerCount}
+          </span>
+          <span className="text-gray-500 text-[clamp(0.9rem,1.4vw,1rem)]">Happy Customers</span>
         </div>
       </div>
+
       {/* Right: Orb & Features */}
-      <div className="flex-1 flex items-center justify-center relative w-full max-w-[60%] mt-12 md:mt-0">
-        {/* Orb Image */}
-        <div className="relative w-full flex items-center justify-center">
+      <div className="flex-1 flex items-center justify-center relative w-full mt-[6vh] md:mt-0">
+        <div className="relative flex items-center justify-center w-full max-w-[90%]">
+          {/* Orb Image */}
           <img
             src={orbImage}
             alt={orbAlt}
-            className="w-[340px] sm:w-[420px] md:w-[620px] h-auto object-contain drop-shadow-2xl"
+            className="w-[45vw] max-w-[60vh] h-auto object-contain drop-shadow-2xl"
             draggable={false}
           />
+
           {/* Orb Badges */}
           {orbBadges.map((badge, i) => (
             <div
               key={i}
-              className="absolute bg-white rounded-xl shadow-lg px-4 py-2 flex items-center gap-2"
+              className="absolute bg-white rounded-xl shadow-lg px-[1.5vw] py-[1vh] flex items-center gap-[0.5vw] text-[clamp(0.9rem,1.4vw,1rem)]"
               style={badge.style}
             >
               {badge.icon}
               <span className="font-medium text-gray-700">{badge.label}</span>
             </div>
           ))}
+
           {/* Orb Stats */}
           {orbStats.length > 0 && (
-            <div className="absolute top-8 right-0 bg-white rounded-2xl shadow px-6 py-4 flex flex-col gap-2 min-w-[180px]">
+            <div className="absolute top-[8%] right-0 bg-white rounded-2xl shadow px-[2vw] py-[2vh] flex flex-col gap-[1vh] min-w-[20%] max-w-[25%]">
               {orbStats.map((stat, i) => (
-                <div key={i} className="flex items-center gap-2">
+                <div key={i} className="flex items-center gap-[1vw]">
                   <span
-                    className="inline-block w-3 h-3 rounded-full"
+                    className="inline-block w-[1vw] h-[1vw] min-w-[8px] min-h-[8px] rounded-full"
                     style={{ background: stat.color }}
                   ></span>
-                  <span className="text-gray-700 font-medium">{stat.label}</span>
+                  <span className="text-gray-700 font-medium text-[clamp(0.9rem,1.4vw,1rem)]">
+                    {stat.label}
+                  </span>
                 </div>
               ))}
-              {/* Example slider */}
-              <input type="range" min={0} max={100} className="w-full mt-2 accent-gray-300" />
+              <input
+                type="range"
+                min={0}
+                max={100}
+                className="w-full mt-[1vh] accent-gray-300"
+              />
             </div>
           )}
+
           {/* Orb Features */}
           {orbFeatures.map((feature, i) => (
             <div
               key={i}
-              className="absolute bg-white rounded-xl shadow-lg px-4 py-2 flex items-center gap-2"
+              className="absolute bg-white rounded-xl shadow-lg px-[1.5vw] py-[1vh] flex items-center gap-[0.5vw] text-[clamp(0.9rem,1.4vw,1rem)]"
               style={feature.style}
             >
               {feature.icon}

@@ -51,15 +51,23 @@ const testimonialsRow2 = [
 
 function TestimonialCard({ avatar, name, role, text }: typeof testimonialsRow1[0]) {
   return (
-    <div className="bg-white rounded-xl shadow-lg border border-gray-100 min-w-[320px] max-w-xs mx-4 my-2 p-6 flex flex-col animate-fade-in">
-      <div className="flex items-center gap-3 mb-2">
-        <img src={avatar} alt={name} className="w-10 h-10 rounded-full object-cover" />
+    <div className="bg-white rounded-xl shadow-lg border border-gray-100 min-w-[22vw] max-w-[26vw] mx-[1vw] my-[1vh] p-[2vw] flex flex-col animate-fade-in">
+      <div className="flex items-center gap-[1vw] mb-[1vh]">
+        <img
+          src={avatar}
+          alt={name}
+          className="w-[3vw] h-[3vw] min-w-[36px] min-h-[36px] rounded-full object-cover"
+        />
         <div>
-          <div className="font-semibold text-gray-900">{name}</div>
-          <div className="text-xs text-gray-500">{role}</div>
+          <div className="font-semibold text-gray-900 text-[max(1vw,0.95rem)]">
+            {name}
+          </div>
+          <div className="text-[max(0.8vw,0.75rem)] text-gray-500">{role}</div>
         </div>
       </div>
-      <div className="text-gray-700 text-base mt-2">{text}</div>
+      <div className="text-gray-700 text-[max(0.95vw,0.9rem)] mt-[1vh] leading-snug">
+        {text}
+      </div>
     </div>
   );
 }
@@ -68,32 +76,28 @@ export default function UserTestimonials() {
   const row1Ref = useRef<HTMLDivElement>(null);
   const row2Ref = useRef<HTMLDivElement>(null);
 
-  // Calculate total width for smooth animation
-  const cardCount = testimonialsRow1.length * 2;
-  const cardWidth = 340; // min-w-[320px] + margin
-  const totalWidth = cardCount * cardWidth;
-
   return (
-    <div className="min-h-screen w-full flex flex-col items-center px-6 py-20 bg-white relative">
+    <div className="min-h-screen w-full flex flex-col items-center px-[5%] py-[12vh] bg-white relative">
       {/* Badge */}
-      <div className="mb-8 flex justify-center">
-        <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-gray-100 text-gray-700 font-medium shadow">
+      <div className="mb-[3vh] flex justify-center">
+        <span className="inline-flex items-center gap-[0.6vw] px-[1.5vw] py-[0.8vh] rounded-full bg-gray-100 text-gray-700 font-medium shadow text-[max(1vw,0.9rem)]">
           What Teams Are Saying
         </span>
       </div>
+
       {/* Heading */}
-      <h1 className="text-5xl font-bold text-gray-900 text-center mb-4 leading-tight">
-        See what our users are<br />saying.
+      <h1 className="text-[max(4vw,1.8rem)] font-bold text-gray-900 text-center mb-[12vh] leading-tight">
+        See what our users say
       </h1>
-      <div className="text-gray-500 text-center mb-12">Proof in the Progress</div>
+
       {/* Animated Rows */}
-      <div className="w-full flex flex-col gap-8 items-center justify-center">
-        {/* Row 1: Right to Left */}
-        <div className="overflow-hidden w-[1600px]">
+      <div className="w-full flex flex-col gap-[4vh] items-center justify-center">
+        {/* Row 1 */}
+        <div className="overflow-hidden w-full">
           <motion.div
             ref={row1Ref}
             className="flex items-center w-max"
-            animate={{ x: [`0%`, `-50%`] }}
+            animate={{ x: ["0%", "-50%"] }}
             transition={{
               repeat: Infinity,
               repeatType: "loop",
@@ -107,12 +111,13 @@ export default function UserTestimonials() {
             ))}
           </motion.div>
         </div>
-        {/* Row 2: Left to Right */}
-        <div className="overflow-hidden w-[1600px]">
+
+        {/* Row 2 */}
+        <div className="overflow-hidden w-full">
           <motion.div
             ref={row2Ref}
             className="flex items-center w-max"
-            animate={{ x: [`-50%`, `0%`] }}
+            animate={{ x: ["-50%", "0%"] }}
             transition={{
               repeat: Infinity,
               repeatType: "loop",
@@ -127,9 +132,10 @@ export default function UserTestimonials() {
           </motion.div>
         </div>
       </div>
-      {/* Fade effect on sides */}
-      <div className="pointer-events-none absolute left-0 top-0 h-full w-32 bg-gradient-to-r from-white to-transparent" />
-      <div className="pointer-events-none absolute right-0 top-0 h-full w-32 bg-gradient-to-l from-white to-transparent" />
+
+      {/* Side Fade */}
+      <div className="pointer-events-none absolute left-0 top-0 h-full w-[8vw] bg-gradient-to-r from-white to-transparent" />
+      <div className="pointer-events-none absolute right-0 top-0 h-full w-[8vw] bg-gradient-to-l from-white to-transparent" />
     </div>
   );
 }

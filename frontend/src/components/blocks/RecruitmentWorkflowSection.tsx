@@ -31,7 +31,7 @@ export function RecruitmentWorkflowSection({
   bigCard,
 }: RecruitmentWorkflowSectionProps) {
   return (
-    <section className="w-full py-16 px-4 bg-white">
+    <section className="w-full py-[12vh] px-[4vh] bg-white">
       <div className="max-w-[90%] mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
@@ -65,11 +65,11 @@ export function RecruitmentWorkflowSection({
                 <img
                   src={step.image}
                   alt={step.imageAlt || "Workflow step"}
-                  className="w-full max-w-[80%] max-h-[80%] rounded-2xl shadow-lg object-top overflow-hidden"
+                  className="w-full max-w-[90%] max-h-[80%] rounded-2xl shadow-lg object-top overflow-hidden"
                   draggable={false}
                 />
               </div>
-              <div className="flex items-center gap-2 mb-3">
+              <div className="flex items-center gap-2 mb-3 mt-4">
                 {step.icon && (
                   <span className="text-blue-600 text-2xl">{step.icon}</span>
                 )}

@@ -27,7 +27,7 @@ export function AgenticHiringBenefitsSection({
   const [activeIdx, setActiveIdx] = useState(0);
 
   return (
-    <section className="w-full py-16 px-4 bg-white">
+    <section className="w-full py-[16vh] px-[4vh] bg-white">
       <div className="max-w-[90%] mx-auto">
         {badge && (
           <motion.div

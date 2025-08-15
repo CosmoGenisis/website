@@ -217,10 +217,10 @@ export default function ZordieFeatures() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-200 to-white-100 py-16 px-4">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4 md:px-12 xl:px-28">
+    <div className="min-h-screen bg-gradient-to-b from-blue-300 to-blue-200 py-16 px-4">
+      <div className=" w-full  grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16 px-4 md:px-12 xl:px-28">
         {/* Superior Performance Card */}
-        <div className="lg:col-span-2 rounded-[48px] p-12 flex flex-col justify-between min-h-[520px] shadow-xl relative overflow-hidden"
+        <div className="lg:col-span-2 rounded-[48px] p-12 flex flex-col justify-between min-h-[600px] shadow-xl relative overflow-hidden"
           style={{
             background: "linear-gradient(180deg, #20b694 0%, #0f8ecb 50%, #0046c2 100%)"
           }}
@@ -285,7 +285,7 @@ export default function ZordieFeatures() {
         </div>
 
         {/* Seamless Integration */}
-        <div className="rounded-[48px] p-10 flex flex-col justify-between min-h-[420px] shadow-xl relative overflow-hidden"
+        <div className=" rounded-[48px] p-10 flex flex-col justify-between min-h-[600px] shadow-xl relative overflow-hidden"
           style={{
             background: "linear-gradient(180deg, #0958d9 0%, #2563eb 50%, #c78a75 100%)",
           }}
@@ -332,7 +332,7 @@ export default function ZordieFeatures() {
         </div>
 
         {/* Auto AI Updates */}
-        <div className="lg:col-span-2 rounded-[48px] p-12 flex flex-col justify-between min-h-[520px] shadow-xl relative overflow-hidden"
+        <div className="lg:col-span-2 rounded-[48px] p-12 flex flex-col justify-between min-h-[550px] shadow-xl relative overflow-hidden"
           style={{
             background: "linear-gradient(180deg, #0958d9 0%, #2563eb 50%, #c78a75 100%)",
           }}

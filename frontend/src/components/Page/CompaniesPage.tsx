@@ -35,7 +35,7 @@ import img5 from "@/images/Faq_background.png";
 
 
 export const CompaniesPage=()=>{
-    return(
+    return( 
         <div className="relative bg-white">
             <div className="h-full max-h-[800px] overflow-hidden">
             <HeroSection
@@ -53,8 +53,7 @@ export const CompaniesPage=()=>{
                 ]}
                 backgroundImage={img1}
                 />
-            <CompanyFeaturesCards />
-            <AgentsIntegrationDiagram />
+            <CompanyFeaturesCards /> 
             <ZordieFeatures />
             <AnimatedTestimonialsWithParticles />
             <FaqPage2

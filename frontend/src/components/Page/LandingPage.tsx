@@ -44,8 +44,8 @@ export const LandingPage=()=>{
         <div className="relative bg-white">
             <HeroSection
             badge={<>Next-Gen Hiring</>}
-            title={<>The First Autonomous<br />Hiring Platform</>}
-            subtitle={<>Streamline your entire recruitment workflow—from job posting to final hire—with advanced AI-driven precision.</>}
+            title={<>Your Next Hire,<br/> Just Minutes Away.</>}
+            subtitle={<>The first autonomous AI hiring platform that connect with top candidates, screen them automatically, and make your hiring smarter, faster, and bias-free.</>}
             buttons={[
                 { label: "Start Free Trial", href: "#", variant: "primary" },
                 { label: "Get Early Access", href: "#", variant: "outline" },
@@ -59,9 +59,7 @@ export const LandingPage=()=>{
             backgroundImage={imgBg}
             dashboardImage={imgDash}
             />
-            <div className=" mb-24"> 
             <Zordifeatures />
-            </div>
             <ZordiFeatures />
             <RecruiterAiTools
                 badge={<><Sparkle className="w-5 h-5" /> Features</>}
@@ -102,7 +100,7 @@ export const LandingPage=()=>{
             <UserTestimonials />
             <FaqPage />
             <HeroSmarterHiring 
-              title= {"Smart Hiring Starts Here"}
+              title= {<>Smart Hiring<br/> Starts Here</>}
               subtitle={"All-in-one AI platform to find, assess, and onboard top talent faster."}
               buttonText={"Get Started"}
               backgroundImage={img1}

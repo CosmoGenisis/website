@@ -1,6 +1,5 @@
 import React from "react";
-import { useScroll } from "framer-motion";
-import Navbar from '../ui/nav';
+import Navbar from "../ui/nav";
 
 interface HeroSectionProps {
   heading: React.ReactNode;
@@ -18,15 +17,15 @@ export function HeroSection({
   return (
     <>
       <HeroHeader />
-      <section className="min-h-screen flex flex-col items-center justify-center bg-white px-4">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-black text-center mb-6 sm:mb-8 leading-tight">
+      <section className="min-h-screen flex flex-col items-center  bg-white px-[4%] py-[24vh]">
+        <h1 className="font-bold text-black text-center mb-[3vh] leading-tight text-[max(5vw,2rem)]">
           {heading}
         </h1>
-        <p className="text-lg sm:text-xl md:text-2xl text-gray-500 text-center mb-8 sm:mb-10 max-w-2xl">
+        <p className="text-gray-500 text-center mb-[5vh] max-w-[60ch] text-[max(1.4vw,1rem)]">
           {subheading}
         </p>
         <button
-          className="px-6 sm:px-8 py-3 sm:py-4 rounded-full bg-gradient-to-r from-blue-300 to-green-200 text-black text-base sm:text-xl font-medium shadow hover:from-blue-400 hover:to-green-300 transition w-full max-w-xs sm:max-w-sm"
+          className="rounded-full bg-gradient-to-r from-blue-300 to-green-200 text-black font-medium shadow hover:from-blue-400 hover:to-green-300 transition w-full max-w-[280px] sm:max-w-[340px] px-[2vw] py-[1vh] text-[max(1.1vw,0.95rem)]"
           onClick={onButtonClick}
         >
           {buttonText}

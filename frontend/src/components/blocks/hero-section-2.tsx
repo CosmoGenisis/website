@@ -37,7 +37,7 @@ export function HeroSection({
     <HeroHeader />
     <main className="overflow-hidden">
       <section className="p-0 m-0">
-        <div ref={ref} className="relative w-full flex flex-col items-center justify-start p-0 m-0 bg-transparent">
+        <div ref={ref} className="relative w-full flex flex-col items-center justify-start p-0 m-0 bg-transparent py-[8vh]">
           {/* Responsive Gradient/Background */}
           <div
             className="absolute inset-0 w-full h-full z-0 bg-no-repeat bg-cover bg-center"
@@ -55,7 +55,7 @@ export function HeroSection({
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7 }}
-                className="max-w-4xl font-black mt-2 mb-2 text-3xl md:text-6xl leading-tight text-gray-900"
+                className="max-w-4xl font-black mt-2 mb-2 text-3xl md:text-7xl leading-tight text-gray-900"
               >
                 {title}
               </motion.h1>
@@ -64,7 +64,7 @@ export function HeroSection({
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7, delay: 0.1 }}
-                className="mt-4 max-w-3xl text-lg md:text-2xl text-gray-700 font-normal"
+                className="mt-4 max-w-[83%] text-lg md:text-2xl text-gray-700 font-normal"
               >
                 {subtitle}
               </motion.p>
@@ -107,7 +107,7 @@ export function HeroSection({
             <img
               src={dashboardImage}
               alt="Dashboard"
-              className="w-full max-w-5xl h-full object-cover rounded-2xl shadow-xl"
+              className="w-full max-w-[90%] h-full object-cover rounded-2xl shadow-xl"
               draggable={false}
               style={{ objectPosition: "top" }}
             />

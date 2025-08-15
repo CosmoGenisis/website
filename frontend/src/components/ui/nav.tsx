@@ -45,7 +45,7 @@ export default function Navbar() {
       className={cn(
         "fixed z-50 flex justify-center items-start transition-all duration-300",
         "left-0 right-0 mx-auto mt-4 rounded-full backdrop-blur-xl pointer-events-auto border-b",
-        isScrolled ? "bg-white/40 shadow-md py-[0.3rem]" : "bg-white/20 shadow-lg py-[0.5rem]",
+        isScrolled ? "bg-white/40 shadow-md py-[0.3rem]" : "bg-white/20 shadow-lg py-[0.2rem]",
         isScrolled ? "w-[70%]" : "w-[90%]", // proportional widths
         "max-w-[1400px]" // cap width on huge screens
       )}
@@ -57,26 +57,27 @@ export default function Navbar() {
         )}
       >
         {/* Logo */}
-<div className="flex items-center min-w-0 flex-shrink-0 col-span-6 sm:col-span-4 md:col-span-3">
-  <Link to="/" className="flex items-center">
-    <img
-      src={Logo}
-      alt="Zordie Logo"
-      className={cn(
-        "transition-all duration-300 w-auto",
-        isScrolled ? "h-[1.8rem]" : "h-[2.8rem]" // slightly bigger
-      )}
-    />
-    <span
-      className={cn(
-        "ml-[6%] font-extrabold text-gray-900 transition-all duration-300 tracking-normal",
-        isScrolled ? "text-sm" : "text-lg" // bigger text for better readability
-      )}
-    >
-      Zordie
-    </span>
-  </Link>
-</div>
+        <div className="flex items-center min-w-0 flex-shrink-0 col-span-6 sm:col-span-4 md:col-span-3 ml-4">
+          <Link to="/" className="flex items-center">
+            <img
+              src={Logo}
+              alt="Zordie Logo"
+              className={cn(
+                "transition-all duration-300 w-auto",
+                isScrolled ? "h-[2.8rem]" : "h-[4.8rem]", // slightly bigger
+                isScrolled ? "w-[2.8rem]" : "w-[5.8rem]"
+              )}
+            />
+            <span
+              className={cn(
+                "ml-[6%] font-extrabold text-gray-900 transition-all duration-300 tracking-normal",
+                isScrolled ? "text-lg" : "text-3xl" // bigger text for better readability
+              )}
+            >
+              Zordie
+            </span>
+          </Link>
+        </div>
 
         {/* Center Menu */}
         <div className="hidden lg:flex items-center justify-center col-span-6">
@@ -89,7 +90,7 @@ export default function Navbar() {
                 key={item.name}
                 className={cn(
                   "rounded-full font-semibold transition-all duration-300 px-[2%] py-[0.5%]",
-                  isScrolled ? "text-xs" : "text-sm"
+                  isScrolled ? "text-sm" : "text-lg"
                 )}
               >
                 <Link to={item.href} className="truncate">{item.name}</Link>
@@ -99,14 +100,14 @@ export default function Navbar() {
         </div>
 
         {/* Right side */}
-        <div className="flex items-center justify-end col-span-6 sm:col-span-4 md:col-span-3">
+        <div className="flex items-center justify-end col-span-6 sm:col-span-4 md:col-span-3 mr-[4vh]">
           <div className="hidden sm:flex items-center justify-end space-x-2">
             <Button
               asChild
               size="lg"
               className={cn(
-                "rounded-full font-semibold border-gray-300 px-[30%] py-[3.5%]",
-                isScrolled ? "text-xs" : "text-sm"
+                isScrolled ? "rounded-full font-semibold border-gray-300 px-[30%] py-[4.5%]" : "rounded-full font-semibold border-gray-300 px-[30%] py-[20%]",
+                isScrolled ? "text-sm" : "text-2xl"
               )}
             >
               <Link to="/login">Login</Link>

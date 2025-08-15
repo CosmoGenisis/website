@@ -23,7 +23,7 @@ import avatar3 from "@/images/user3.png";
 import img1 from "@/images/Solution_1.png";
 import img2 from "@/images/Background_1.png";
 import img3 from "@/images/People_8.png";
-import img4 from "@/images/Solutions_2.png";
+import img4 from "@/images/People_8.png";
 import imgReq from "@/images/req.png";
 import imgScreen from "@/images/screen.png";
 import { Sparkles, PhoneCall, BadgeCheck, Settings, Zap, Users, Mic, BarChart3, LineChart, BarChart, MessageCircle } from "lucide-react";
@@ -120,7 +120,7 @@ export function SolutionPage () {
               "From scheduling interviews to sending offer letters and collecting documents, our AI automates every step. Candidates are onboarded with zero human delay, ensuring faster joining and better experience.",
         }}
       />
-      <AgenticHiringBenefitsSection
+      <AgenticHiringBenefitsSection 
         badge={<>Smart. Secure. Scalable</>}
         heading="Benifits of Agentic Hiring System"
         benefits={[
@@ -159,10 +159,10 @@ export function SolutionPage () {
         ]}
       />
       <HeroSmarterHiring 
-              title= {"Smart Hiring Solutions for Every Need"}
+              title= {<>Smart Hiring Solutions for<br/> Every Need</>}
               subtitle={"AI-driven solutions to help you hire better, faster, and at scale."}
               buttonText={"Get Started"}
-              backgroundImage={img2}
+              backgroundImage={img2} 
               personImage={img4}
             />
       <FooterDemo />

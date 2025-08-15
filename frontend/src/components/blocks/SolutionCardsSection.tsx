@@ -1,5 +1,5 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useRef } from "react";
+import { motion, useAnimation, useInView } from "framer-motion";
 import { BadgeCheck, Settings, Zap, Users, Mic, BarChart3 } from "lucide-react";
 
 interface Feature {
@@ -25,11 +25,23 @@ export function SolutionCardsSection({
   image,
   features,
 }: SolutionCardsSectionProps) {
+  const leftRef = useRef(null);
+  const rightRef = useRef(null);
+  const leftInView = useInView(leftRef, { once: true, margin: "-100px" });
+  const rightInView = useInView(rightRef, { once: true, margin: "-100px" });
+
   return (
-    <section className="w-full py-56 px-4 bg-white">
+    <section className="w-full py-[8vh] px-[4vh] bg-white">
       <div className="max-w-[90%] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
         {/* Left Side */}
-        <div className="flex flex-col items-start">
+        <motion.div
+          ref={leftRef}
+          initial={{ opacity: 0, y: 60 }}
+          animate={leftInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="flex flex-col items-start"
+        >
+          {/* ...existing left side code... */}
           {badge && (
             <motion.div
               initial={{ opacity: 0, y: -10 }}
@@ -46,7 +58,7 @@ export function SolutionCardsSection({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl md:text-6xl font-bold mb-4 leading-tight"
+            className="text-[clamp(2rem,4vw,3.5rem)]  font-bold mb-4 leading-tight"
           >
             {heading}
           </motion.h2>
@@ -54,7 +66,7 @@ export function SolutionCardsSection({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg text-gray-600 mb-6"
+            className="text-[clamp(1rem,1.6vw,1.25rem)] text-gray-600 mb-6"
           >
             {description}
           </motion.p>
@@ -87,9 +99,15 @@ export function SolutionCardsSection({
               draggable={false}
             />
           </motion.div>
-        </div>
+        </motion.div>
         {/* Right Side: Features */}
-        <div className="flex flex-col gap-8">
+        <motion.div
+          ref={rightRef}
+          initial={{ opacity: 0, x: 80 }}
+          animate={rightInView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="flex flex-col gap-8"
+        >
           {features.map((feature, idx) => (
             <motion.div
               key={feature.title}
@@ -110,7 +128,7 @@ export function SolutionCardsSection({
               </div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
