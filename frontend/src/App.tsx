@@ -19,6 +19,7 @@ import ContactPage from './components/Page/ContactPage'
 import PreAccess from './components/blocks/Waitlist'
 import { CompaniesPage } from './components/Page/CompaniesPage'
 import { JobSeekersPage } from './components/Page/JobSeekersPage'
+import {PricingPage} from './components/Page/PricingPage'
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
         <Route path='/pre-access' element={<PreAccess />} />
         <Route path='/companies' element={<CompaniesPage />} />
         <Route path='/job-seekers' element={<JobSeekersPage />} />
+        <Route path='/pricing' element={<PricingPage />} />
 
         <Route path='/login' element={<NewLogin/>}></Route>
         <Route path='/waitlist' element={<WaitlistPage/>}></Route>

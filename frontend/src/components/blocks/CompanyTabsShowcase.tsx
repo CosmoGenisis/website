@@ -59,7 +59,7 @@ export function CompanyTabsShowcase({
             className="absolute rounded-t-[2vw]"
             style={{
               width: "95%",
-              maxWidth: "1160px",
+              maxWidth: "85%",
               height: "740px",
               background:
                 "linear-gradient(180deg, rgba(255,255,255,0.4), rgba(255,255,255,0))",
@@ -70,7 +70,7 @@ export function CompanyTabsShowcase({
           {/* Image container */}
           <div
             className="rounded-t-[2vw] bg-white/90 overflow-hidden relative z-10"
-            style={{ width: "90%", maxWidth: "1100px" }}
+            style={{ width: "90%", maxWidth: "80%" }}
           >
             <img
               src={tabs[active].image}

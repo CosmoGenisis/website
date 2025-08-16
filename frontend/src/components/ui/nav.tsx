@@ -18,9 +18,10 @@ const menuItems = [
   { name: "For Job Seekers", href: "/job-seekers", icon: platform },
   { name: "About", href: "/about", icon: about },
   { name: "Contact", href: "/contact", icon: about },
+  {name: "Pricing", href: "/pricing", icon: platform},
 ]
 
-export default function Navbar() {
+export default function Navbar({ whiteBg = false }: { whiteBg?: boolean }) {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const navRef = useRef<HTMLDivElement>(null)
@@ -44,10 +45,15 @@ export default function Navbar() {
       ref={navRef}
       className={cn(
         "fixed z-50 flex justify-center items-start transition-all duration-300",
-        "left-0 right-0 mx-auto mt-4 rounded-full backdrop-blur-xl pointer-events-auto border-b",
-        isScrolled ? "bg-white/40 shadow-md py-[0.3rem]" : "bg-white/20 shadow-lg py-[0.2rem]",
-        isScrolled ? "w-[70%]" : "w-[90%]", // proportional widths
-        "max-w-[1400px]" // cap width on huge screens
+        isScrolled
+          ? "left-0 right-0 mx-auto rounded-full backdrop-blur-xl pointer-events-auto border-b max-w-[100%]"
+          : "left-0 right-0 mx-auto backdrop-blur-none pointer-events-auto",
+        whiteBg
+          ? "bg-white shadow-md py-[0.3rem] w-full"
+          : isScrolled
+            ? "bg-white/40 shadow-md py-[0.3rem] w-[90%]"
+            : "bg-white/20 w-full",
+        "max-w-[100%]"
       )}
     >
       <div
@@ -101,16 +107,30 @@ export default function Navbar() {
 
         {/* Right side */}
         <div className="flex items-center justify-end col-span-6 sm:col-span-4 md:col-span-3 mr-[4vh]">
-          <div className="hidden sm:flex items-center justify-end space-x-2">
+          <div className="hidden sm:flex flex-row items-center space-x-2">
             <Button
               asChild
               size="lg"
               className={cn(
-                isScrolled ? "rounded-full font-semibold border-gray-300 px-[30%] py-[4.5%]" : "rounded-full font-semibold border-gray-300 px-[30%] py-[20%]",
-                isScrolled ? "text-sm" : "text-2xl"
+                isScrolled
+                  ? "rounded-full font-semibold border-gray-300 px-6 py-2"
+                  : "rounded-full font-semibold border-gray-300 px-8 py-3",
+                isScrolled ? "text-sm" : "text-xl"
               )}
             >
               <Link to="/login">Login</Link>
+            </Button>
+            <Button
+              asChild
+              size="lg"
+              className={cn(
+                isScrolled
+                  ? "rounded-full font-semibold bg-blue-500 text-white px-6 py-2"
+                  : "rounded-full font-semibold bg-blue-500 text-white px-8 py-3",
+                isScrolled ? "text-sm" : "text-xl"
+              )}
+            >
+              <Link to="/pre-access">Pre Access</Link>
             </Button>
           </div>
 

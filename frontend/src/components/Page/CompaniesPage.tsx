@@ -32,6 +32,8 @@ import img2 from "@/images/Company_img1.png";
 import img3 from "@/images/Faq_1.png";
 import img4 from "@/images/Faq_2.png";
 import img5 from "@/images/Faq_background.png";
+import img6 from "@/images/Company_img2.png";
+import img7 from "@/images/Company_img3.png";
 
 
 export const CompaniesPage=()=>{
@@ -47,8 +49,8 @@ export const CompaniesPage=()=>{
             </div>
             <CompanyTabsShowcase
                 tabs={[
-                    { label: "Activate Talent Pool", image: img2 },
-                    { label: "Interview Services", image: img2 },
+                    { label: "Activate Talent Pool", image: img6 },
+                    { label: "Interview Services", image: img7 },
                     { label: "Automated Candidate Onboarding", image: img2 },
                 ]}
                 backgroundImage={img1}
