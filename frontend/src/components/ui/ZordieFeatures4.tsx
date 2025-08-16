@@ -5,15 +5,21 @@ import vid1 from "@/images/Video.mp4";
 import vid2 from "@/images/Video1.mp4";
 // ...other imports...
 
-function AnimatedStat({ value, suffix = "", label, duration = 1200 }) {
+interface AnimatedStatProps {
+  value: number;
+  suffix?: string;
+  label: string;
+  duration?: number;
+}
+function AnimatedStat({ value, suffix = "", label, duration = 1200 }: AnimatedStatProps) {
   const [count, setCount] = useState(0);
-  const ref = useRef(null);
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     let start = 0;
     const end = value;
     const increment = end / (duration / 16); // 16ms per frame
-    let frame;
+  let frame: number;
 
     function animate() {
       start += increment;

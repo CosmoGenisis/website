@@ -66,7 +66,8 @@ const features = [
   },
 ];
 
-function AnimatedCard({ children }) {
+import type { ReactNode } from "react";
+function AnimatedCard({ children }: { children: ReactNode }) {
   const controls = useAnimation();
   const { ref, inView } = useInView({ threshold: 0.4, triggerOnce: false });
 
@@ -194,7 +195,7 @@ export function CompanyFeaturesCards() {
   );
 }
 
-function FeatureImage({ feature }) {
+function FeatureImage({ feature }: { feature: any }) {
   return (
     <div className="md:w-1/2 w-full flex justify-center items-center p-[4%]">
       <div

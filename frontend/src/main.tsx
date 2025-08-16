@@ -4,11 +4,10 @@ import './index.css'
 import App from './App.tsx'
 import { ClerkProvider } from '@clerk/clerk-react';
 import { CLERK_PUBLISHABLE_KEY } from './config';
-import Lenis from '@studio-freight/lenis'
+import Lenis from 'lenis'
 
 const lenis = new Lenis({
   lerp: 0.1,
-  smooth: true,
 })
 
 function raf(time: number) {

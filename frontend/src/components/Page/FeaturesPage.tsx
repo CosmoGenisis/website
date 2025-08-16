@@ -63,12 +63,10 @@ export function FeaturesPage() {
       <Navbar></Navbar>
       {/* <HeroParallaxDemo></HeroParallaxDemo> */}
       <FeaturesHero
-        badge={<>Advance AI Hiring</>}
         title={<>First Full-Stack Agentic<br />AI Copilot for Hiring</>}
         subtitle={
           <>Automate tasks, boost accuracy, and make faster decisions with intelligent tools built for modern recruiters.</>
         }
-        backgroundImage={bgImg}
         dashboardImage={dashboardImg}
         peopleImages={[
           { src: user1, alt: "User 1" },
@@ -181,20 +179,19 @@ export function FeaturesPage() {
       />
       <div className="bg-white max-h-[700px] ">
       <FaqPage2
-            faqs={[
-                
-            ]}
-            banner={{
-                background: img5,
-                title: <>Explore Zordie’s Powerful Features</>,
-                subtitle: "From smart JD creation to autonomous interviews - everything you need in one platform.",
-                buttonText: "Get Started",
-                onButtonClick: () => {/* your handler */},
-                peopleImages: [
-                { src: img4, alt: "Person 1", style: {position: "absolute", top: "60%", left: "50%", transform: "translate(-50%, -50%)", width: "150%", height: "150%", objectFit: "cover", zIndex: 10 } },
-                ],
-            }}
-            />
+        faqs={[]}
+        heading={<>Frequently Asked Questions</>}
+        banner={{
+          background: img5,
+          title: <>Explore Zordie’s Powerful Features</>,
+          subtitle: "From smart JD creation to autonomous interviews - everything you need in one platform.",
+          buttonText: "Get Started",
+          onButtonClick: () => {/* your handler */},
+          peopleImages: [
+            { src: img4, alt: "Person 1", style: {position: "absolute", top: "60%", left: "50%", transform: "translate(-50%, -50%)", width: "150%", height: "150%", objectFit: "cover", zIndex: 10 } },
+          ],
+        }}
+      />
             </div>
 
       {/* Hero Section with Gradient Heading */}
