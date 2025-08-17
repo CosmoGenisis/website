@@ -44,7 +44,7 @@ export const CompaniesPage=()=>{
                 heading={<>Your AI Hiring Partner<br />From Start To Finish</>}
                 subheading="Hire Smarter, Faster, and at Scale with Zero Manual Effort"
                 buttonText="Get Started"
-                onButtonClick={() => {/* your handler */}}
+                onButtonClick={() => window.location.href = "/pre-access"}
                 />
             </div>
             <CompanyTabsShowcase
@@ -75,7 +75,7 @@ export const CompaniesPage=()=>{
                 title: <>Hire Smarter with Zordie</>,
                 subtitle: "From job posting to onboarding - all in one platform.",
                 buttonText: "Start Hiring Now",
-                onButtonClick: () => {/* your handler */},
+                onButtonClick: () =>  window.location.href = "/pre-access",
                 peopleImages: [
                 { src: img3, alt: "Person 1", style: { top: "80%", left: "50%", transform: "translate(-60%, -50%)" } },
                 { src: img4, alt: "Person 2", style: { top: "80%", left: "50%", transform: "translate(0%, -50%)" } },

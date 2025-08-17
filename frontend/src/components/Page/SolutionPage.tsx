@@ -162,6 +162,7 @@ export function SolutionPage () {
               title= {<>Smart Hiring Solutions for<br/> Every Need</>}
               subtitle={"AI-driven solutions to help you hire better, faster, and at scale."}
               buttonText={"Get Started"}
+              onButtonClick={() => window.location.href = "/pre-access"}
               backgroundImage={img2} 
               personImage={img4}
             />

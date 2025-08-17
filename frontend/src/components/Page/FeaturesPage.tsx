@@ -180,13 +180,13 @@ export function FeaturesPage() {
       <div className="bg-white max-h-[700px] ">
       <FaqPage2
         faqs={[]}
-        heading={<>Frequently Asked Questions</>}
+        heading={<></>}
         banner={{
           background: img5,
           title: <>Explore Zordie’s Powerful Features</>,
           subtitle: "From smart JD creation to autonomous interviews - everything you need in one platform.",
           buttonText: "Get Started",
-          onButtonClick: () => {/* your handler */},
+          onButtonClick: () =>  window.location.href = "/pre-access",
           peopleImages: [
             { src: img4, alt: "Person 1", style: {position: "absolute", top: "60%", left: "50%", transform: "translate(-50%, -50%)", width: "150%", height: "150%", objectFit: "cover", zIndex: 10 } },
           ],

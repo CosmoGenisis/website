@@ -92,7 +92,7 @@ export default function WaitlistHero() {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5 }}
               onSubmit={handleSubmit}
-              className="w-full max-w-md bg-white/10 backdrop-blur-md rounded-xl p-6 flex flex-col gap-4 shadow-lg"
+              className="w-full max-w-md bg-white/10 backdrop-blur-md rounded-xl p-6 flex flex-col gap-12 shadow-lg"
             >
               <div>
                 <label className="block text-gray-200 mb-1 text-sm">I am a</label>
@@ -109,18 +109,6 @@ export default function WaitlistHero() {
                 </select>
               </div>
               <div>
-                <label className="block text-gray-200 mb-1 text-sm">LinkedIn Profile</label>
-                <input
-                  type="url"
-                  name="linkedin"
-                  value={form.linkedin}
-                  onChange={handleChange}
-                  placeholder="https://linkedin.com/in/yourprofile"
-                  required
-                  className="w-full rounded-md px-3 py-2 bg-black/60 text-white border border-gray-700 focus:ring-2 focus:ring-blue-400"
-                />
-              </div>
-              <div>
                 <label className="block text-gray-200 mb-1 text-sm">Email Address</label>
                 <input
                   type="email"
@@ -128,6 +116,18 @@ export default function WaitlistHero() {
                   value={form.email}
                   onChange={handleChange}
                   placeholder="Your email address"
+                  required
+                  className="w-full rounded-md px-3 py-2 bg-black/60 text-white border border-gray-700 focus:ring-2 focus:ring-blue-400"
+                />
+              </div>
+              <div>
+                <label className="block text-gray-200 mb-1 text-sm">LinkedIn Profile</label>
+                <input
+                  type="url"
+                  name="linkedin"
+                  value={form.linkedin}
+                  onChange={handleChange}
+                  placeholder="https://linkedin.com/in/yourprofile"
                   required
                   className="w-full rounded-md px-3 py-2 bg-black/60 text-white border border-gray-700 focus:ring-2 focus:ring-blue-400"
                 />

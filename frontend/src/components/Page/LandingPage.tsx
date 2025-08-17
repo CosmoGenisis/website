@@ -47,8 +47,8 @@ export const LandingPage=()=>{
             title={<>Your Next Hire,<br/> Just Minutes Away.</>}
             subtitle={<>The first autonomous AI hiring platform that connect with top candidates, screen them automatically, and make your hiring smarter, faster, and bias-free.</>}
             buttons={[
-                { label: "Start Free Trial", href: "#", variant: "primary" },
-                { label: "Get Early Access", href: "#", variant: "outline" },
+                { label: "Start Free Trial", href: "/login", variant: "primary" },
+                { label: "Get Early Access", href: "/pre-access", variant: "outline" },
             ]}
             avatars={[
                 { src: img2, alt: "avatar 1" },
@@ -102,7 +102,8 @@ export const LandingPage=()=>{
             <HeroSmarterHiring 
               title= {<>Smart Hiring<br/> Starts Here</>}
               subtitle={"All-in-one AI platform to find, assess, and onboard top talent faster."}
-              buttonText={"Get Started"}
+              buttonText={"Get Started"} 
+              onButtonClick={() => window.location.href = "/pre-access"}
               backgroundImage={img1}
               personImage={img2}
             />

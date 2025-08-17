@@ -57,7 +57,7 @@ export const JobSeekersPage=()=>{
                 heading={<>Crack Interviews. Get<br />Hired. Build Your Career</>}
                 subheading="Zordiehelps freshers, students, and job seekers practice, improve, and land their dream job - fast, with no irrelevant roles or fake listings."
                 buttonText="Create Your Profile"
-                onButtonClick={() => {/* your handler */}}
+                onButtonClick={() => window.location.href = "/login"}
                 />
             </div>
             <CompanyTabsShowcase
@@ -156,7 +156,7 @@ export const JobSeekersPage=()=>{
                         title: <>Start Your Career Journey with Zordie</>,
                         subtitle: "Make yourself job-ready. Apply with purpose. Get hired with confidence",
                         buttonText: "Start Practicing Now",
-                        onButtonClick: () => {/* your handler */},
+                        onButtonClick: () =>  window.location.href = "/pre-access",
                         peopleImages: [
                         { src: img7, alt: "Person 1", style: { position: "absolute", top: "60%", left: "50%", transform: "translate(-50%, -50%)", width: "150%", height: "150%", objectFit: "cover", zIndex: 10 } },
                         ],

@@ -47,7 +47,7 @@ export default function Navbar({ whiteBg = false }: { whiteBg?: boolean }) {
         "fixed z-50 flex justify-center items-start transition-all duration-300",
         isScrolled
           ? "left-0 right-0 mx-auto rounded-full backdrop-blur-xl pointer-events-auto border-b max-w-[100%]"
-          : "left-0 right-0 mx-auto backdrop-blur-none pointer-events-auto",
+          : "left-0 right-0 mx-auto backdrop-blur-none pointer-events-auto py-[0.6rem]",
         whiteBg
           ? "bg-white shadow-md py-[0.3rem] w-full"
           : isScrolled
