@@ -22,8 +22,8 @@ export default function HeroSmarterHiring({
   className="w-full min-h-[30vh] md:min-h-[50vh] flex items-center justify-center relative overflow-hidden rounded-[2.4vw] md:rounded-[3.5vw] mb-[12vh]"
   style={{
     background: `url(${backgroundImage}) center/cover no-repeat`,
-    maxWidth: "85%",
-    right: "-7.4%",
+    maxWidth: "90%",
+    right: "-5.0%",
   }}
 >
   {/* Subtle vertical stripes */}
@@ -63,7 +63,7 @@ export default function HeroSmarterHiring({
         alt="Person"
         className="relative z-10 w-[60%] md:w-[30vw] lg:w-[45vw] h-auto object-contain"
         style={{
-          marginLeft: "20%",
+          marginLeft: "40%",
           marginBottom: "-16vh",
         }}
       />

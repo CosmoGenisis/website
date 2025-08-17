@@ -158,7 +158,7 @@ export const JobSeekersPage=()=>{
                         buttonText: "Start Practicing Now",
                         onButtonClick: () =>  window.location.href = "/pre-access",
                         peopleImages: [
-                        { src: img7, alt: "Person 1", style: { position: "absolute", top: "60%", left: "50%", transform: "translate(-50%, -50%)", width: "150%", height: "150%", objectFit: "cover", zIndex: 10 } },
+                        { src: img7, alt: "Person 1", style: { position: "absolute", top: "60%", left: "70%", transform: "translate(-50%, -50%)", width: "150%", height: "150%", objectFit: "cover", zIndex: 10 } },
                         ],
                     }}
                     />

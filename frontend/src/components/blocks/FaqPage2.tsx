@@ -101,13 +101,13 @@ export default function FaqPage2({
           style={{ pointerEvents: "none" }} draggable={false} 
           /> 
           {/* Overlay for better text readability */} 
-          <div className="absolute inset-0 bg-blue-700/10 backdrop-blur-sm rounded-[32px] sm:rounded-[56px] z-10"></div> 
+          <div className="absolute inset-0 bg-blue-700/10 rounded-[32px] sm:rounded-[56px] z-10"></div> 
           <div className="relative z-20 flex flex-col md:flex-row items-center justify-center w-full h-full px-4 sm:px-8 py-8 sm:py-12"> 
             {/* Left: Text */} 
             <div className="flex-1 flex flex-col items-center md:items-start justify-center text-center md:text-left mb-8 md:mb-0"> 
               <h2 className="text-2xl sm:text-5xl md:text-6xl font-bold text-white mb-4 sm:mb-6"> {banner.title} 
                 </h2> 
-                <p className="text-base sm:text-xl text-white/90 mb-6 sm:mb-8"> {banner.subtitle} 
+                <p className="text-base sm:text-sx text-white/90 mb-6 sm:mb-8"> {banner.subtitle} 
                 </p> <button className="bg-white text-gray-900 font-semibold text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-full shadow-lg hover:bg-blue-50 transition" onClick={banner.onButtonClick} > {banner.buttonText} 
                   </button> 
                   </div> 
