@@ -37,80 +37,153 @@ export function HeroSection({
     <HeroHeader />
     <main className="overflow-hidden">
       <section className="p-0 m-0">
-        <div ref={ref} className="relative w-full flex flex-col items-center justify-start p-0 m-0 bg-transparent py-[8vh]">
-          {/* Responsive Gradient/Background */}
-          <div
-            className="absolute inset-0 w-full h-full z-0 bg-no-repeat bg-cover bg-center"
-            style={{ backgroundImage: `url(${backgroundImage})` }}
-          />
-          <div className="mx-auto max-w-5xl px-6 w-full z-10 relative">
+        <div ref={ref} className="relative w-full flex flex-col items-center justify-start p-0 m-0 bg-black min-h-screen py-[8vh]">
+          {/* Animated Grid Background */}
+          <div className="absolute inset-0 w-full h-full z-0">
+            <div className="absolute inset-0 bg-black" />
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/10 to-cyan-900/20" />
+            <div className="absolute inset-0 opacity-30">
+              <div className="absolute inset-0" style={{
+                backgroundImage: `
+                  linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+                  linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px)
+                `,
+                backgroundSize: '50px 50px'
+              }} />
+            </div>
+            {/* Floating particles */}
+            <div className="absolute inset-0">
+              {[...Array(20)].map((_, i) => (
+                <motion.div
+                  key={i}
+                  className="absolute w-1 h-1 bg-blue-400 rounded-full"
+                  style={{
+                    left: `${Math.random() * 100}%`,
+                    top: `${Math.random() * 100}%`,
+                  }}
+                  animate={{
+                    y: [0, -30, 0],
+                    opacity: [0.3, 1, 0.3],
+                  }}
+                  transition={{
+                    duration: 3 + Math.random() * 2,
+                    repeat: Infinity,
+                    delay: Math.random() * 2,
+                  }}
+                />
+              ))}
+            </div>
+          </div>
+          
+          <div className="mx-auto max-w-6xl px-6 w-full z-10 relative">
             <div className="sm:mx-auto lg:mr-auto flex flex-col items-center text-center">
-              <div className="mt-24 mb-6">
-                <span className="inline-block px-6 py-2 rounded-full bg-white/80 text-gray-900 text-lg font-medium shadow border border-gray-200">
-                  {badge}
-                </span>
-              </div>
-              <motion.h1
+              {/* Modern Badge */}
+              <motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.7 }}
-                className="max-w-4xl font-black mt-2 mb-2 text-3xl md:text-7xl leading-tight text-gray-900"
+                transition={{ duration: 0.6 }}
+                className="mt-24 mb-8"
+              >
+                <span className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-500/30 text-blue-300 text-sm font-medium backdrop-blur-sm">
+                  <span className="w-2 h-2 bg-blue-400 rounded-full mr-2 animate-pulse"></span>
+                  {badge}
+                </span>
+              </motion.div>
+
+              {/* Main Title with Gradient */}
+              <motion.h1
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="max-w-5xl font-black mt-2 mb-6 text-4xl md:text-8xl leading-tight bg-gradient-to-r from-white via-blue-100 to-cyan-200 bg-clip-text text-transparent"
               >
                 {title}
               </motion.h1>
+
+              {/* Subtitle */}
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.7, delay: 0.1 }}
-                className="mt-4 max-w-[83%] text-lg md:text-2xl text-gray-700 font-normal"
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="mt-6 max-w-3xl text-xl md:text-2xl text-gray-300 font-light leading-relaxed"
               >
                 {subtitle}
               </motion.p>
-              <div className="flex flex-col sm:flex-row items-center gap-4 justify-center mt-10">
+
+              {/* Modern Buttons */}
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="flex flex-col sm:flex-row items-center gap-6 justify-center mt-12"
+              >
                 {buttons.map((btn, i) => (
                   <a
                     key={btn.label}
                     href={btn.href}
-                    className={`rounded-full px-8 py-4 text-lg font-semibold transition ${
+                    className={`group relative overflow-hidden rounded-full px-10 py-4 text-lg font-semibold transition-all duration-300 ${
                       btn.variant === "outline"
-                        ? "bg-white text-black border border-gray-200 hover:bg-gray-100"
-                        : "bg-black text-white hover:bg-gray-900"
+                        ? "bg-transparent text-white border-2 border-blue-500/50 hover:border-blue-400 hover:bg-blue-500/10 hover:shadow-lg hover:shadow-blue-500/25"
+                        : "bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-500 hover:to-purple-500 hover:shadow-lg hover:shadow-blue-500/25 hover:scale-105"
                     }`}
                   >
-                    {btn.label}
+                    <span className="relative z-10">{btn.label}</span>
+                    {btn.variant !== "outline" && (
+                      <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
+                    )}
                   </a>
                 ))}
-              </div>
-              {/* Trusted by avatars and text */}
-              <div className="flex items-center justify-center mt-10">
+              </motion.div>
+
+              {/* Trusted by section */}
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                className="flex items-center justify-center mt-16"
+              >
                 <div className="flex -space-x-4">
                   {avatars.map((a, i) => (
-                    <img
+                    <motion.img
                       key={i}
                       src={a.src}
                       alt={a.alt}
-                      className="w-12 h-12 rounded-full border-2 border-white"
+                      className="w-14 h-14 rounded-full border-3 border-blue-500/30 hover:border-blue-400/50 transition-all duration-300"
+                      whileHover={{ scale: 1.1, zIndex: 10 }}
                     />
                   ))}
                 </div>
-                <span className="ml-4 text-lg text-gray-600 font-medium">{trustedText}</span>
-              </div>
+                <span className="ml-6 text-lg text-gray-400 font-medium">{trustedText}</span>
+              </motion.div>
             </div>
           </div>
-          {/* Animated dashboard image */}
+
+          {/* Enhanced Dashboard Image */}
           <motion.div
             style={{ y, scaleX }}
-            className="w-full flex justify-center mt-24 md:mt-36 overflow-visible"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 0.8 }}
+            className="w-full flex justify-center mt-20 md:mt-32 px-4 relative overflow-hidden"
           >
-            <img
-              src={dashboardImage}
-              alt="Dashboard"
-              className="w-full max-w-[90%] h-full object-cover rounded-2xl shadow-xl"
-              draggable={false}
-              style={{ objectPosition: "top" }}
-            />
+            {/* Glow effect behind dashboard */}
+            <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-purple-600/20 blur-3xl opacity-50 pointer-events-none" />
+            <div className="relative w-full max-w-6xl">
+              <img
+                src={dashboardImage}
+                alt="Dashboard"
+                className="w-full h-auto object-contain rounded-2xl lg:rounded-3xl shadow-2xl border border-blue-500/20 hover:border-blue-400/30 transition-all duration-500"
+                draggable={false}
+              />
+              {/* Overlay gradient for better integration */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent rounded-2xl lg:rounded-3xl pointer-events-none" />
+            </div>
           </motion.div>
         </div>
       </section>

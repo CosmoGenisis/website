@@ -1,24 +1,20 @@
 "use client"
-import { Menu, X } from "lucide-react"
+import { Menu, X, Zap } from "lucide-react"
 import { useEffect, useRef, useState } from "react"
 import { Link } from "react-router-dom"
 import { motion, AnimatePresence } from "framer-motion"
 
 import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
 import Logo from '@/images/Logo.png'
-import platform from '@/images/Platform.png'
-import solutions from '@/images/Solutions.png'
-import about from '@/images/about.png'
 
 const menuItems = [
-  { name: "Features", href: "/features", icon: platform },
-  { name: "Solutions", href: "/solutions", icon: solutions },
-  { name: "For Companies", href: "/companies", icon: platform },
-  { name: "For Job Seekers", href: "/job-seekers", icon: platform },
-  { name: "About", href: "/about", icon: about },
-  { name: "Contact", href: "/contact", icon: about },
-  {name: "Pricing", href: "/pricing", icon: platform},
+  { name: "Features", href: "/features" },
+  { name: "Solutions", href: "/solutions" },
+  { name: "Companies", href: "/companies" },
+  { name: "Job Seekers", href: "/job-seekers" },
+  { name: "About", href: "/about" },
+  { name: "Contact", href: "/contact" },
+  { name: "Pricing", href: "/pricing" },
 ]
 
 export default function Navbar({ whiteBg = false }: { whiteBg?: boolean }) {
@@ -41,149 +37,204 @@ export default function Navbar({ whiteBg = false }: { whiteBg?: boolean }) {
   }
 
   return (
-    <nav
+    <motion.nav
       ref={navRef}
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
       className={cn(
-        "fixed z-50 flex justify-center items-start transition-all duration-300",
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
         isScrolled
-          ? "left-0 right-0 mx-auto rounded-full backdrop-blur-xl pointer-events-auto border-b max-w-[100%]"
-          : "left-0 right-0 mx-auto backdrop-blur-none pointer-events-auto py-[0.6rem]",
-        whiteBg
-          ? "bg-white shadow-md py-[0.3rem] w-full"
-          : isScrolled
-            ? "bg-white/40 shadow-md py-[0.3rem] w-[90%]"
-            : "bg-white/20 w-full",
-        "max-w-[100%]"
+          ? "bg-black/95 backdrop-blur-xl border-b border-blue-500/20 shadow-lg shadow-blue-500/10"
+          : "bg-transparent",
+        whiteBg && "bg-white/95 border-b border-gray-200"
       )}
     >
-      <div
-        className={cn(
-          "w-full grid grid-cols-12 items-center justify-between transition-all duration-300",
-          isScrolled ? "gap-[1%]" : "gap-[2%]" // percentage-based gaps
-        )}
-      >
-        {/* Logo */}
-        <div className="flex items-center min-w-0 flex-shrink-0 col-span-6 sm:col-span-4 md:col-span-3 ml-4">
-          <Link to="/" className="flex items-center">
-            <img
-              src={Logo}
-              alt="Zordie Logo"
-              className={cn(
-                "transition-all duration-300 w-auto",
-                isScrolled ? "h-[2.8rem]" : "h-[4.8rem]", // slightly bigger
-                isScrolled ? "w-[2.8rem]" : "w-[5.8rem]"
-              )}
-            />
-            <span
-              className={cn(
-                "ml-[6%] font-extrabold text-gray-900 transition-all duration-300 tracking-normal",
-                isScrolled ? "text-lg" : "text-3xl" // bigger text for better readability
-              )}
-            >
-              Zordie
-            </span>
-          </Link>
-        </div>
+      <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
+        <div className="flex items-center justify-between h-16 overflow-hidden">
+          {/* Logo Section */}
+          <motion.div
+            className="flex items-center space-x-2 sm:space-x-3 flex-shrink-0"
+            whileHover={{ scale: 1.02 }}
+            transition={{ duration: 0.2 }}
+          >
+            <Link to="/" className="flex items-center space-x-2 sm:space-x-3 group">
+              <div className="relative">
+                <img
+                  src={Logo}
+                  alt="Zordie Logo"
+                  className="h-8 w-8 sm:h-10 sm:w-10 transition-all duration-300 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-blue-500/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </div>
+              <span className={cn(
+                "text-lg sm:text-xl font-bold tracking-tight transition-all duration-300",
+                whiteBg ? "text-gray-900" : "text-white",
+                "group-hover:text-blue-400"
+              )}>
+                Zordie
+              </span>
+            </Link>
+          </motion.div>
 
-        {/* Center Menu */}
-        <div className="hidden lg:flex items-center justify-center col-span-6">
-          <div className="flex justify-center w-full space-x-[3%]">
-            {menuItems.map((item) => (
-              <Button
-                asChild
-                size="sm"
-                variant="ghost"
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex items-center space-x-1 flex-1 justify-center max-w-2xl">
+            {menuItems.map((item, index) => (
+              <motion.div
                 key={item.name}
-                className={cn(
-                  "rounded-full font-semibold transition-all duration-300 px-[2%] py-[0.5%]",
-                  isScrolled ? "text-sm" : "text-lg"
-                )}
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: index * 0.1 }}
               >
-                <Link to={item.href} className="truncate">{item.name}</Link>
-              </Button>
+                <Link
+                  to={item.href}
+                  className={cn(
+                    "relative px-2 lg:px-3 xl:px-4 py-2 text-xs lg:text-sm font-medium rounded-lg transition-all duration-300 group whitespace-nowrap",
+                    whiteBg
+                      ? "text-gray-700 hover:text-blue-600 hover:bg-blue-50"
+                      : "text-gray-300 hover:text-white hover:bg-white/10"
+                  )}
+                >
+                  <span className="relative z-10">{item.name}</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </Link>
+              </motion.div>
             ))}
           </div>
-        </div>
 
-        {/* Right side */}
-        <div className="flex items-center justify-end col-span-6 sm:col-span-4 md:col-span-3 mr-[4vh]">
-          <div className="hidden sm:flex flex-row items-center space-x-2">
-            <Button
-              asChild
-              size="lg"
+          {/* Right Section */}
+          <div className="flex items-center space-x-1 sm:space-x-2 lg:space-x-4 flex-shrink-0">
+            {/* Desktop Buttons */}
+            <div className="hidden sm:flex items-center space-x-1 sm:space-x-2 lg:space-x-3">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Link
+                  to="/login"
+                  className={cn(
+                    "px-2 py-1.5 sm:px-3 sm:py-2 lg:px-4 lg:py-2 text-xs sm:text-sm font-medium rounded-lg border transition-all duration-300 whitespace-nowrap",
+                    whiteBg
+                      ? "border-gray-300 text-gray-700 hover:bg-gray-50"
+                      : "border-blue-500/50 text-white hover:bg-blue-500/10 hover:border-blue-400"
+                  )}
+                >
+                  Login
+                </Link>
+              </motion.div>
+
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Link
+                  to="/pre-access"
+                  className={cn(
+                    "px-2 py-1.5 sm:px-3 sm:py-2 lg:px-4 lg:py-2 text-xs sm:text-sm font-medium rounded-lg border transition-all duration-300 whitespace-nowrap",
+                    whiteBg
+                      ? "border-gray-300 text-gray-700 hover:bg-gray-50"
+                      : "border-blue-500/50 text-white hover:bg-blue-500/10 hover:border-blue-400"
+                  )}
+                >
+                  <span className="flex items-center space-x-1">
+                    <Zap className="w-3 h-3 sm:w-3.5 sm:h-3.5 lg:w-4 lg:h-4 flex-shrink-0" />
+                    <span className="hidden sm:inline lg:inline">Get Access</span>
+                    <span className="sm:hidden">Go</span>
+                  </span>
+                </Link>
+              </motion.div>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <motion.button
+              onClick={toggleMobileMenu}
               className={cn(
-                isScrolled
-                  ? "rounded-full font-semibold border-gray-300 px-6 py-2"
-                  : "rounded-full font-semibold border-gray-300 px-8 py-3",
-                isScrolled ? "text-sm" : "text-xl"
+                "md:hidden p-2 rounded-lg transition-all duration-300",
+                whiteBg
+                  ? "text-gray-700 hover:bg-gray-100"
+                  : "text-white hover:bg-white/10"
               )}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
             >
-              <Link to="/login">Login</Link>
-            </Button>
-            <Button
-              asChild
-              size="lg"
-              className={cn(
-                isScrolled
-                  ? "rounded-full font-semibold bg-blue-500 text-white px-6 py-2"
-                  : "rounded-full font-semibold bg-blue-500 text-white px-8 py-3",
-                isScrolled ? "text-sm" : "text-xl"
-              )}
-            >
-              <Link to="/pre-access">Pre Access</Link>
-            </Button>
+              <motion.div
+                animate={{ rotate: isMobileMenuOpen ? 180 : 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                {isMobileMenuOpen ? (
+                  <X className="w-6 h-6" />
+                ) : (
+                  <Menu className="w-6 h-6" />
+                )}
+              </motion.div>
+            </motion.button>
           </div>
-
-          {/* Mobile menu button */}
-          <button
-            onClick={toggleMobileMenu}
-            className={cn(
-              "inline-flex items-center justify-center rounded-full transition-all duration-300 text-gray-700 hover:bg-white/30 hover:backdrop-blur-md lg:hidden ml-[2%]",
-              isScrolled ? "p-[0.4rem]" : "p-[0.6rem]"
-            )}
-          >
-            {isMobileMenuOpen ? (
-              <X className={isScrolled ? "h-[1.25rem] w-[1.25rem]" : "h-[1.5rem] w-[1.5rem]"} />
-            ) : (
-              <Menu className={isScrolled ? "h-[1.25rem] w-[1.25rem]" : "h-[1.5rem] w-[1.5rem]"} />
-            )}
-          </button>
         </div>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden absolute top-full left-0 right-0 mt-[1%] bg-white/90 backdrop-blur-xl rounded-2xl shadow-lg overflow-hidden w-[90%] max-w-[400px] mx-auto"
+            className={cn(
+              "md:hidden border-t overflow-hidden",
+              whiteBg
+                ? "bg-white/95 border-gray-200"
+                : "bg-black/95 border-blue-500/20"
+            )}
           >
-            <div className="space-y-[2%] px-[5%] pb-[5%] pt-[2%]">
+            <div className="max-w-7xl mx-auto px-4 py-4 space-y-2">
               {menuItems.map((item, index) => (
-                <div key={index} className="py-[2%]">
+                <motion.div
+                  key={item.name}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.3, delay: index * 0.1 }}
+                >
                   <Link
                     to={item.href}
-                    className="flex w-full items-center justify-between rounded-md py-[2%] text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-blue-600"
+                    className={cn(
+                      "block px-4 py-3 text-base font-medium rounded-lg transition-all duration-300",
+                      whiteBg
+                        ? "text-gray-700 hover:bg-gray-100 hover:text-blue-600"
+                        : "text-gray-300 hover:bg-white/10 hover:text-white"
+                    )}
+                    onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    <span>{item.name}</span>
+                    {item.name}
                   </Link>
-                </div>
+                </motion.div>
               ))}
-              <div className="mt-[4%] flex flex-col space-y-[2%]">
-                <Button asChild variant="outline" size="sm" className="rounded-md hover:bg-gray-100/80">
-                  <Link to="/login">Login</Link>
-                </Button>
-                <Button asChild size="sm" className="rounded-md bg-orange-500 hover:bg-orange-600">
-                  <Link to="/pre-access">Pre Access</Link>
-                </Button>
+
+              <div className="pt-4 space-y-3">
+                <Link
+                  to="/login"
+                  className={cn(
+                    "block w-full px-4 py-3 text-center text-base font-medium rounded-lg border transition-all duration-300",
+                    whiteBg
+                      ? "border-gray-300 text-gray-700 hover:bg-gray-50"
+                      : "border-blue-500/50 text-white hover:bg-blue-500/10"
+                  )}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Login
+                </Link>
+                <Link
+                  to="/pre-access"
+                  className="block w-full px-4 py-3 text-center text-base font-medium text-white rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 transition-all duration-300"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Get Access
+                </Link>
               </div>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </nav>
+    </motion.nav>
   )
 }

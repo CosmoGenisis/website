@@ -41,7 +41,7 @@ import { Sparkle, BarChart, MessageCircle, Users, FileText } from "lucide-react"
 
 export const LandingPage=()=>{
     return(
-        <div className="relative bg-white">
+        <div className="relative bg-black">
             <HeroSection
             badge={<>Next-Gen Hiring</>}
             title={<>Your Next Hire,<br/> Just Minutes Away.</>}
